@@ -1,0 +1,1 @@
+G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\frmHome\obj\Debug\net5.0-windows\RelaxoSA.csproj.AssemblyReference.cache

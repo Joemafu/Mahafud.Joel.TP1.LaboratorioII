@@ -1,0 +1,1 @@
+﻿public enum EDisponibilidad { Alta, Media, Baja, Agotado }
