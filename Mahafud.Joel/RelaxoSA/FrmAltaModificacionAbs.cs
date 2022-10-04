@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace RelaxoSA
 {
-    internal partial class FrmAltaModificacionAbs : Form
+    internal partial class FrmAltaModificacionAbs : FrmBase
     {
         internal FrmAltaModificacionAbs()
         {
             InitializeComponent();
         }
-    }
+
+        public override void SetearMensajeAyuda()
+        {
+            this.chkAyuda.Text = "";
+        }
+
+
+    }    
 }

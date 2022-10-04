@@ -68,17 +68,23 @@ namespace RelaxoSA
             // btnAceptar
             // 
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAceptar.Location = new System.Drawing.Point(75, 522);
+            this.btnAceptar.Location = new System.Drawing.Point(75, 512);
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(219, 522);
+            this.btnCancelar.Location = new System.Drawing.Point(219, 512);
+            // 
+            // chkAyuda
+            // 
+            this.chkAyuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkAyuda.Location = new System.Drawing.Point(3, 538);
+            this.chkAyuda.CheckedChanged += new System.EventHandler(this.chkAyuda_CheckedChanged);
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(12, 78);
+            this.lblNombre.Location = new System.Drawing.Point(12, 76);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(54, 15);
             this.lblNombre.TabIndex = 2;
@@ -87,7 +93,7 @@ namespace RelaxoSA
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(12, 107);
+            this.lblApellido.Location = new System.Drawing.Point(12, 105);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(54, 15);
             this.lblApellido.TabIndex = 3;
@@ -96,7 +102,7 @@ namespace RelaxoSA
             // lblDni
             // 
             this.lblDni.AutoSize = true;
-            this.lblDni.Location = new System.Drawing.Point(12, 136);
+            this.lblDni.Location = new System.Drawing.Point(12, 134);
             this.lblDni.Name = "lblDni";
             this.lblDni.Size = new System.Drawing.Size(30, 15);
             this.lblDni.TabIndex = 4;
@@ -105,7 +111,7 @@ namespace RelaxoSA
             // lblFechaDeNacimiento
             // 
             this.lblFechaDeNacimiento.AutoSize = true;
-            this.lblFechaDeNacimiento.Location = new System.Drawing.Point(12, 165);
+            this.lblFechaDeNacimiento.Location = new System.Drawing.Point(12, 163);
             this.lblFechaDeNacimiento.Name = "lblFechaDeNacimiento";
             this.lblFechaDeNacimiento.Size = new System.Drawing.Size(122, 15);
             this.lblFechaDeNacimiento.TabIndex = 5;
@@ -114,7 +120,7 @@ namespace RelaxoSA
             // lblNacionalidad
             // 
             this.lblNacionalidad.AutoSize = true;
-            this.lblNacionalidad.Location = new System.Drawing.Point(12, 194);
+            this.lblNacionalidad.Location = new System.Drawing.Point(12, 192);
             this.lblNacionalidad.Name = "lblNacionalidad";
             this.lblNacionalidad.Size = new System.Drawing.Size(77, 15);
             this.lblNacionalidad.TabIndex = 6;
@@ -123,7 +129,7 @@ namespace RelaxoSA
             // lblPasaporte
             // 
             this.lblPasaporte.AutoSize = true;
-            this.lblPasaporte.Location = new System.Drawing.Point(12, 223);
+            this.lblPasaporte.Location = new System.Drawing.Point(12, 221);
             this.lblPasaporte.Name = "lblPasaporte";
             this.lblPasaporte.Size = new System.Drawing.Size(101, 15);
             this.lblPasaporte.TabIndex = 7;
@@ -132,7 +138,7 @@ namespace RelaxoSA
             // lblFechaExoedicionPasaporte
             // 
             this.lblFechaExoedicionPasaporte.AutoSize = true;
-            this.lblFechaExoedicionPasaporte.Location = new System.Drawing.Point(12, 252);
+            this.lblFechaExoedicionPasaporte.Location = new System.Drawing.Point(12, 250);
             this.lblFechaExoedicionPasaporte.Name = "lblFechaExoedicionPasaporte";
             this.lblFechaExoedicionPasaporte.Size = new System.Drawing.Size(118, 15);
             this.lblFechaExoedicionPasaporte.TabIndex = 8;
@@ -141,7 +147,7 @@ namespace RelaxoSA
             // lblFechaVencimientoPasaporte
             // 
             this.lblFechaVencimientoPasaporte.AutoSize = true;
-            this.lblFechaVencimientoPasaporte.Location = new System.Drawing.Point(12, 281);
+            this.lblFechaVencimientoPasaporte.Location = new System.Drawing.Point(12, 279);
             this.lblFechaVencimientoPasaporte.Name = "lblFechaVencimientoPasaporte";
             this.lblFechaVencimientoPasaporte.Size = new System.Drawing.Size(126, 15);
             this.lblFechaVencimientoPasaporte.TabIndex = 9;
@@ -150,7 +156,7 @@ namespace RelaxoSA
             // lblEquipajeDeMano
             // 
             this.lblEquipajeDeMano.AutoSize = true;
-            this.lblEquipajeDeMano.Location = new System.Drawing.Point(12, 313);
+            this.lblEquipajeDeMano.Location = new System.Drawing.Point(12, 311);
             this.lblEquipajeDeMano.Name = "lblEquipajeDeMano";
             this.lblEquipajeDeMano.Size = new System.Drawing.Size(105, 15);
             this.lblEquipajeDeMano.TabIndex = 10;
@@ -158,28 +164,28 @@ namespace RelaxoSA
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(196, 75);
+            this.txtNombre.Location = new System.Drawing.Point(196, 73);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(163, 23);
             this.txtNombre.TabIndex = 12;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(196, 104);
+            this.txtApellido.Location = new System.Drawing.Point(196, 102);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(163, 23);
             this.txtApellido.TabIndex = 13;
             // 
             // txtDni
             // 
-            this.txtDni.Location = new System.Drawing.Point(196, 133);
+            this.txtDni.Location = new System.Drawing.Point(196, 131);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(163, 23);
             this.txtDni.TabIndex = 14;
             // 
             // txtNumeroPasaporte
             // 
-            this.txtNumeroPasaporte.Location = new System.Drawing.Point(196, 220);
+            this.txtNumeroPasaporte.Location = new System.Drawing.Point(196, 218);
             this.txtNumeroPasaporte.Name = "txtNumeroPasaporte";
             this.txtNumeroPasaporte.Size = new System.Drawing.Size(163, 23);
             this.txtNumeroPasaporte.TabIndex = 17;
@@ -187,7 +193,7 @@ namespace RelaxoSA
             // chkbxEquipajeDeMano
             // 
             this.chkbxEquipajeDeMano.AutoSize = true;
-            this.chkbxEquipajeDeMano.Location = new System.Drawing.Point(196, 314);
+            this.chkbxEquipajeDeMano.Location = new System.Drawing.Point(196, 312);
             this.chkbxEquipajeDeMano.Name = "chkbxEquipajeDeMano";
             this.chkbxEquipajeDeMano.Size = new System.Drawing.Size(15, 14);
             this.chkbxEquipajeDeMano.TabIndex = 20;
@@ -231,7 +237,7 @@ namespace RelaxoSA
             this.gbxEquipajeDespachable.Controls.Add(this.rbtnDosDespachos);
             this.gbxEquipajeDespachable.Controls.Add(this.rbtnUnDespacho);
             this.gbxEquipajeDespachable.Controls.Add(this.rbtnCeroDespachos);
-            this.gbxEquipajeDespachable.Location = new System.Drawing.Point(12, 346);
+            this.gbxEquipajeDespachable.Location = new System.Drawing.Point(12, 336);
             this.gbxEquipajeDespachable.Name = "gbxEquipajeDespachable";
             this.gbxEquipajeDespachable.Size = new System.Drawing.Size(347, 57);
             this.gbxEquipajeDespachable.TabIndex = 26;
@@ -241,7 +247,7 @@ namespace RelaxoSA
             // datepFechaNacimiento
             // 
             this.datepFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datepFechaNacimiento.Location = new System.Drawing.Point(196, 159);
+            this.datepFechaNacimiento.Location = new System.Drawing.Point(196, 157);
             this.datepFechaNacimiento.MaxDate = new System.DateTime(2022, 10, 3, 0, 0, 0, 0);
             this.datepFechaNacimiento.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.datepFechaNacimiento.Name = "datepFechaNacimiento";
@@ -252,7 +258,7 @@ namespace RelaxoSA
             // datepExpedicionPasaporte
             // 
             this.datepExpedicionPasaporte.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datepExpedicionPasaporte.Location = new System.Drawing.Point(196, 246);
+            this.datepExpedicionPasaporte.Location = new System.Drawing.Point(196, 244);
             this.datepExpedicionPasaporte.MaxDate = new System.DateTime(2022, 10, 3, 15, 14, 36, 0);
             this.datepExpedicionPasaporte.MinDate = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
             this.datepExpedicionPasaporte.Name = "datepExpedicionPasaporte";
@@ -263,7 +269,7 @@ namespace RelaxoSA
             // datepVencimientoPasaporte
             // 
             this.datepVencimientoPasaporte.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.datepVencimientoPasaporte.Location = new System.Drawing.Point(196, 275);
+            this.datepVencimientoPasaporte.Location = new System.Drawing.Point(196, 273);
             this.datepVencimientoPasaporte.MinDate = new System.DateTime(2022, 10, 4, 0, 0, 0, 0);
             this.datepVencimientoPasaporte.Name = "datepVencimientoPasaporte";
             this.datepVencimientoPasaporte.Size = new System.Drawing.Size(163, 23);
@@ -274,7 +280,7 @@ namespace RelaxoSA
             // 
             this.lblDestino.AutoSize = true;
             this.lblDestino.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblDestino.Location = new System.Drawing.Point(12, 9);
+            this.lblDestino.Location = new System.Drawing.Point(12, 7);
             this.lblDestino.Name = "lblDestino";
             this.lblDestino.Size = new System.Drawing.Size(84, 28);
             this.lblDestino.TabIndex = 30;
@@ -480,7 +486,7 @@ namespace RelaxoSA
             "Yibuti",
             "Zambia",
             "Zimbabue"});
-            this.cmbxNacionalidad.Location = new System.Drawing.Point(196, 191);
+            this.cmbxNacionalidad.Location = new System.Drawing.Point(196, 189);
             this.cmbxNacionalidad.Name = "cmbxNacionalidad";
             this.cmbxNacionalidad.Size = new System.Drawing.Size(163, 23);
             this.cmbxNacionalidad.TabIndex = 16;
@@ -490,7 +496,7 @@ namespace RelaxoSA
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblTotal.Location = new System.Drawing.Point(12, 482);
+            this.lblTotal.Location = new System.Drawing.Point(12, 472);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(68, 28);
             this.lblTotal.TabIndex = 31;
@@ -501,7 +507,7 @@ namespace RelaxoSA
             this.lblTotalPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotalPrecio.AutoSize = true;
             this.lblTotalPrecio.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblTotalPrecio.Location = new System.Drawing.Point(219, 482);
+            this.lblTotalPrecio.Location = new System.Drawing.Point(219, 472);
             this.lblTotalPrecio.Name = "lblTotalPrecio";
             this.lblTotalPrecio.Size = new System.Drawing.Size(23, 28);
             this.lblTotalPrecio.TabIndex = 32;
@@ -511,7 +517,7 @@ namespace RelaxoSA
             // 
             this.lblClase.AutoSize = true;
             this.lblClase.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblClase.Location = new System.Drawing.Point(18, 37);
+            this.lblClase.Location = new System.Drawing.Point(18, 35);
             this.lblClase.Name = "lblClase";
             this.lblClase.Size = new System.Drawing.Size(49, 21);
             this.lblClase.TabIndex = 33;
@@ -521,7 +527,7 @@ namespace RelaxoSA
             // 
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblId.Location = new System.Drawing.Point(295, 37);
+            this.lblId.Location = new System.Drawing.Point(295, 35);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(64, 21);
             this.lblId.TabIndex = 34;
@@ -531,7 +537,7 @@ namespace RelaxoSA
             // 
             this.lblPrecioPasaje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblPrecioPasaje.AutoSize = true;
-            this.lblPrecioPasaje.Location = new System.Drawing.Point(12, 410);
+            this.lblPrecioPasaje.Location = new System.Drawing.Point(12, 400);
             this.lblPrecioPasaje.Name = "lblPrecioPasaje";
             this.lblPrecioPasaje.Size = new System.Drawing.Size(76, 15);
             this.lblPrecioPasaje.TabIndex = 35;
@@ -541,7 +547,7 @@ namespace RelaxoSA
             // 
             this.lblTasasAdicionales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTasasAdicionales.AutoSize = true;
-            this.lblTasasAdicionales.Location = new System.Drawing.Point(12, 459);
+            this.lblTasasAdicionales.Location = new System.Drawing.Point(12, 449);
             this.lblTasasAdicionales.Name = "lblTasasAdicionales";
             this.lblTasasAdicionales.Size = new System.Drawing.Size(132, 15);
             this.lblTasasAdicionales.TabIndex = 36;
@@ -551,7 +557,7 @@ namespace RelaxoSA
             // 
             this.lblIva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblIva.AutoSize = true;
-            this.lblIva.Location = new System.Drawing.Point(12, 434);
+            this.lblIva.Location = new System.Drawing.Point(12, 424);
             this.lblIva.Name = "lblIva";
             this.lblIva.Size = new System.Drawing.Size(34, 15);
             this.lblIva.TabIndex = 37;
@@ -561,7 +567,7 @@ namespace RelaxoSA
             // 
             this.lblPrecioBase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblPrecioBase.AutoSize = true;
-            this.lblPrecioBase.Location = new System.Drawing.Point(257, 410);
+            this.lblPrecioBase.Location = new System.Drawing.Point(257, 400);
             this.lblPrecioBase.Name = "lblPrecioBase";
             this.lblPrecioBase.Size = new System.Drawing.Size(13, 15);
             this.lblPrecioBase.TabIndex = 35;
@@ -571,7 +577,7 @@ namespace RelaxoSA
             // 
             this.lblIvaPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblIvaPrecio.AutoSize = true;
-            this.lblIvaPrecio.Location = new System.Drawing.Point(257, 434);
+            this.lblIvaPrecio.Location = new System.Drawing.Point(257, 424);
             this.lblIvaPrecio.Name = "lblIvaPrecio";
             this.lblIvaPrecio.Size = new System.Drawing.Size(13, 15);
             this.lblIvaPrecio.TabIndex = 36;
@@ -581,7 +587,7 @@ namespace RelaxoSA
             // 
             this.lblTasasAdicionalesPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTasasAdicionalesPrecio.AutoSize = true;
-            this.lblTasasAdicionalesPrecio.Location = new System.Drawing.Point(257, 459);
+            this.lblTasasAdicionalesPrecio.Location = new System.Drawing.Point(257, 449);
             this.lblTasasAdicionalesPrecio.Name = "lblTasasAdicionalesPrecio";
             this.lblTasasAdicionalesPrecio.Size = new System.Drawing.Size(13, 15);
             this.lblTasasAdicionalesPrecio.TabIndex = 37;
@@ -629,6 +635,8 @@ namespace RelaxoSA
             this.MinimumSize = new System.Drawing.Size(387, 596);
             this.Name = "FrmAltaPasajero";
             this.Text = "Vender Pasaje";
+            this.Load += new System.EventHandler(this.FrmAltaPasajero_Load);
+            this.Controls.SetChildIndex(this.chkAyuda, 0);
             this.Controls.SetChildIndex(this.btnAceptar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.gbxEquipajeDespachable, 0);

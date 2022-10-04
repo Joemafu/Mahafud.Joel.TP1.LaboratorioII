@@ -50,8 +50,14 @@ namespace RelaxoSA
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvViajes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViajes_CellClick);
+            this.dgvViajes.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvViajes_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViajes)).BeginInit();
             this.SuspendLayout();
+            // 
+            // chkAyuda
+            // 
+            this.chkAyuda.Location = new System.Drawing.Point(12, 493);
             // 
             // dgvViajes
             // 
@@ -91,7 +97,7 @@ namespace RelaxoSA
             this.dgvViajes.RowTemplate.Height = 25;
             this.dgvViajes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvViajes.ShowEditingIcon = false;
-            this.dgvViajes.Size = new System.Drawing.Size(1007, 329);
+            this.dgvViajes.Size = new System.Drawing.Size(1310, 317);
             this.dgvViajes.TabIndex = 14;
             // 
             // dataGridViewTextBoxColumn1
@@ -200,13 +206,19 @@ namespace RelaxoSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1031, 518);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1334, 524);
             this.Controls.Add(this.dgvViajes);
+            this.MinimumSize = new System.Drawing.Size(813, 435);
             this.Name = "FrmViajesBase";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmViajesBase";
             this.Load += new System.EventHandler(this.FrmViajesBase_Load);
+            this.Controls.SetChildIndex(this.dgvViajes, 0);
+            this.Controls.SetChildIndex(this.chkAyuda, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvViajes)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

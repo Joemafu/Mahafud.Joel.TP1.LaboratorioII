@@ -11,7 +11,7 @@ using Entidades;
 
 namespace RelaxoSA
 {
-    internal partial class FrmHome : Form
+    internal partial class FrmHome : FrmBase
     {
         private FrmIniciarSesion frmIniciarSesion;
        
@@ -25,7 +25,7 @@ namespace RelaxoSA
             this.frmIniciarSesion = frmIniciarSesion;
         }
 
-        internal void setearBienvenida(string nombreDelOperario)
+        internal void SetearBienvenida(string nombreDelOperario)
         {
             this.lblBienvenido.Text = $"Bienvenido {nombreDelOperario}! Hoy es {DateTime.Today.ToShortDateString()}";
         }
@@ -55,7 +55,7 @@ namespace RelaxoSA
 
         private void btnViajes_Click(object sender, EventArgs e)
         {
-            FrmViajes frmViajes = new FrmViajes();
+            FrmViajesVenta frmViajes = new FrmViajesVenta();
 
             frmViajes.ShowDialog();
         }
@@ -79,6 +79,28 @@ namespace RelaxoSA
             FrmEstadisticas frmEstadisticas = new FrmEstadisticas();
 
             frmEstadisticas.ShowDialog();
+        }
+
+        public override void SetearMensajeAyuda()
+        {
+            this.chkAyuda.Text = "" +
+                "Vender Viajes: Lista los viajes programados. Permite vender pasajes y ver pasajeros de los mismos." +
+                "\nBuscar Pasajeros: Filtrar resultados entre los pasajeros de un determinado viaje." +
+                "\nVer Flota: Permite consultar los cruceros de la Compañía." +
+                "\nConsultar Estadísticas: Permite revisar datos históricos de la Empresa." +
+                "\nCerrar Sesión: Cierra la sesión actual.";
+        }
+
+        private void chkAyuda_CheckedChanged(object sender, EventArgs e)
+        {
+            if(this.chkAyuda.Checked)
+            {
+                this.SetearMensajeAyuda();
+            }
+            else
+            {
+                this.SetearMensajeAyudaADefault();
+            }
         }
     }
 }

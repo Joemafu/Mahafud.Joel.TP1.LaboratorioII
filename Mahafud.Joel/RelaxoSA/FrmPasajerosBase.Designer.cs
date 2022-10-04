@@ -47,6 +47,13 @@ namespace RelaxoSA
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasajeros)).BeginInit();
             this.SuspendLayout();
             // 
+            // chkAyuda
+            // 
+            this.chkAyuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkAyuda.CheckAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.chkAyuda.Location = new System.Drawing.Point(12, 419);
+            this.chkAyuda.CheckedChanged += new System.EventHandler(this.chkAyuda_CheckedChanged);
+            // 
             // dgvPasajeros
             // 
             this.dgvPasajeros.AllowUserToAddRows = false;
@@ -189,8 +196,11 @@ namespace RelaxoSA
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pasajeros";
             this.Load += new System.EventHandler(this.FrmPasajeros_Load);
+            this.Controls.SetChildIndex(this.dgvPasajeros, 0);
+            this.Controls.SetChildIndex(this.chkAyuda, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPasajeros)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

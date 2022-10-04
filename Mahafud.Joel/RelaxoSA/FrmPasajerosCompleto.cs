@@ -53,5 +53,23 @@ namespace RelaxoSA
         {
             this.cmbCriterioDeBusqueda.SelectedItem = "Nombre";
         }
+
+        public override void SetearMensajeAyuda()
+        {
+            this.chkAyuda.Text = "Aquí se listan todos los pasajeros de los cruceros actuales" +
+                "\nSe puede filtrar los resultados con la herramienta de búsqueda.";
+        }
+
+        private void chkAyuda_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkAyuda.Checked)
+            {
+                this.SetearMensajeAyuda();
+            }
+            else
+            {
+                this.SetearMensajeAyudaADefault();
+            }
+        }
     }
 }

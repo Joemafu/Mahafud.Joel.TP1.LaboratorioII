@@ -11,23 +11,23 @@ using Entidades;
 
 namespace RelaxoSA
 {
-    internal partial class FrmViajes : Form
+    internal partial class FrmViajesVenta : FrmViajesBase
     {
-        internal FrmViajes()
+        internal FrmViajesVenta()
         {
-            InitializeComponent();
-            FrmViajes.ListarViajesEnDGV(Hardcodeo.ListaViajesActuales, this.dgvViajes);
+            this.InitializeComponent();
+            FrmViajesVenta.ListarViajesEnDGV(Hardcodeo.ListaViajesActuales, base.dgvViajes);
             SetearBotonesVenta(false);
         }
 
         private void dgvViajes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            MostrarInfoViajeSeleccionado();
+            this.MostrarInfoViajeSeleccionado();
         }
 
         private void dgvViajes_KeyUp(object sender, KeyEventArgs e)
         {
-            MostrarInfoViajeSeleccionado();
+            this.MostrarInfoViajeSeleccionado();
         }
 
         private void btnVentaPremium_Click(object sender, EventArgs e)
@@ -51,29 +51,7 @@ namespace RelaxoSA
             frmPasajeros.ShowDialog();
         }
 
-        internal static void ListarViajesEnDGV(List<Viaje> viajes, DataGridView dgv)
-        {
-            dgv.Rows.Clear();
-            foreach (Viaje v in viajes)
-            {
-                dgv.Rows.Add(
-                    v.Id,
-                    v.DisponibilidadPremium,
-                    v.DisponibilidadTurista,
-                    v.Destino,
-                    "Buenos Aires", //Origen
-                    "$" + v.TarifaPremium.ToString("N2"),
-                    "$" + v.TarifaTurista.ToString("N2"),
-                    v.DuracionEnHs,
-                    v.FechaPartida,
-                    v.FechaRegreso,
-                    v.Crucero.Nombre,
-                    v.CamarotesPremiumDisponibles,
-                    v.CamarotesTuristaDisponibles,
-                    v.Pasajeros.Count,
-                    v.DisponibilidadBodegaKgs);
-            }
-        }
+        
 
         private void MostrarInfoViajeSeleccionado()
         {
@@ -136,7 +114,7 @@ namespace RelaxoSA
 
         private void VenderPasaje(bool esPremium)
         {
-            int indice = FrmViajes.LocalizarIndiceFilaSeleccionada(this.dgvViajes);
+            int indice = FrmViajesVenta.LocalizarIndiceFilaSeleccionada(base.dgvViajes);
 
             int idViaje = this.BuscarIdDeViajePorIndiceDeFila(indice);
 
@@ -148,14 +126,14 @@ namespace RelaxoSA
 
             if (frmAltaPasajero.DialogResult == DialogResult.OK)
             {
-                FrmViajes.ListarViajesEnDGV(Hardcodeo.ListaViajesActuales, this.dgvViajes);
+                FrmViajesVenta.ListarViajesEnDGV(Hardcodeo.ListaViajesActuales, base.dgvViajes);
                 this.SetearBotonesVenta(false);
             }
         }
 
         private Viaje ObtenerViajePorFilaSeleccionada()
         {
-            int indiceFilaSeleccionada = FrmViajes.LocalizarIndiceFilaSeleccionada(this.dgvViajes);
+            int indiceFilaSeleccionada = FrmViajesVenta.LocalizarIndiceFilaSeleccionada(base.dgvViajes);
             int idViaje = this.BuscarIdDeViajePorIndiceDeFila(indiceFilaSeleccionada);
             Viaje auxViaje = null; ;
 
@@ -187,6 +165,24 @@ namespace RelaxoSA
             }
 
             return i;
+        }
+
+        public override void SetearMensajeAyuda()
+        {
+            this.chkAyuda.Text = "Seleccione un viaje de la lista. " +
+                "\nLuego puede vender pasajes de la clase deseada o consultar pasajeros";
+        }
+
+        private void chkAyuda_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkAyuda.Checked)
+            {
+                this.SetearMensajeAyuda();
+            }
+            else
+            {
+                this.SetearMensajeAyudaADefault();
+            }
         }
     }
 }

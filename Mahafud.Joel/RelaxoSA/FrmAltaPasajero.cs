@@ -63,12 +63,14 @@ namespace RelaxoSA
             bool equipajeOk = this.ValidarSeleccionEquipaje();
             int equipajeDeMano = 0;
             int equipajesAdicionales=0;
+            int idDeViajeEnVenta = -1;
 
             foreach (Control item in this.gbxEquipajeDespachable.Controls)
             {
                 if(item is RadioButton && ((RadioButton)item).Checked)
                 {
                     equipajesAdicionales = Int32.Parse(((RadioButton)item).Text);
+                    break;
                 }
             }
 
@@ -82,13 +84,21 @@ namespace RelaxoSA
                 Pasaporte pasaporte = new Pasaporte(this.txtNumeroPasaporte.Text,this.cmbxNacionalidad.Text,this.datepExpedicionPasaporte.Value,this.datepVencimientoPasaporte.Value);
                 Pasajero pasajero = new Pasajero(this.txtNombre.Text, this.txtApellido.Text, this.txtDni.Text, this.datepFechaNacimiento.Value, pasaporte, this.lblClase.Text== "Clase Premium - viaje ID", equipajeDeMano, equipajesAdicionales);
 
-                for(int i = 0; i<Hardcodeo.ListaViajesActuales.Count;i++)
+                idDeViajeEnVenta = Int32.Parse(this.lblId.Text);
+
+                for (int i = 0; i<Hardcodeo.ListaViajesActuales.Count;i++)
                 {
-                    if (Hardcodeo.ListaViajesActuales[i].Id==Int32.Parse(this.lblId.Text))
+                    if (Hardcodeo.ListaViajesActuales[i].Id==idDeViajeEnVenta)
                     {
+                        if(Hardcodeo.ListaViajesActuales[i]==pasajero)
+                        {
+                            MessageBox.Show("El pasajero ya tiene boleto para este viaje.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            break;
+                        }
                         Hardcodeo.ListaViajesActuales[i] = Hardcodeo.ListaViajesActuales[i] + pasajero;
                         this.DialogResult = DialogResult.OK;
                         MessageBox.Show("Pasajero agregado correctamente", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
                     }
                 }
             }
@@ -101,6 +111,28 @@ namespace RelaxoSA
         private bool ValidarSeleccionEquipaje ()
         {
             return this.rbtnCeroDespachos.Checked || this.rbtnUnDespacho.Checked || this.rbtnDosDespachos.Checked;
+        }
+
+        public override void SetearMensajeAyuda()
+        {
+            this.chkAyuda.Text = "Vender un pasaje.";
+        }
+
+        private void chkAyuda_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkAyuda.Checked)
+            {
+                this.SetearMensajeAyuda();
+            }
+            else
+            {
+                this.SetearMensajeAyudaADefault();
+            }
+        }
+
+        private void FrmAltaPasajero_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

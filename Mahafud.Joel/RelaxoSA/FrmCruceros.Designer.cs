@@ -29,7 +29,7 @@ namespace RelaxoSA
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCruceros = new System.Windows.Forms.DataGridView();
             this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cMatricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,14 +42,20 @@ namespace RelaxoSA
             ((System.ComponentModel.ISupportInitialize)(this.dgvCruceros)).BeginInit();
             this.SuspendLayout();
             // 
+            // chkAyuda
+            // 
+            this.chkAyuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkAyuda.Location = new System.Drawing.Point(12, 361);
+            this.chkAyuda.CheckedChanged += new System.EventHandler(this.chkAyuda_CheckedChanged);
+            // 
             // dgvCruceros
             // 
             this.dgvCruceros.AllowUserToAddRows = false;
             this.dgvCruceros.AllowUserToDeleteRows = false;
             this.dgvCruceros.AllowUserToOrderColumns = true;
             this.dgvCruceros.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.NullValue = "--";
-            this.dgvCruceros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.NullValue = "--";
+            this.dgvCruceros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCruceros.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -73,7 +79,7 @@ namespace RelaxoSA
             this.dgvCruceros.RowTemplate.Height = 25;
             this.dgvCruceros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCruceros.ShowEditingIcon = false;
-            this.dgvCruceros.Size = new System.Drawing.Size(878, 368);
+            this.dgvCruceros.Size = new System.Drawing.Size(878, 342);
             this.dgvCruceros.TabIndex = 8;
             // 
             // cNombre
@@ -133,8 +139,11 @@ namespace RelaxoSA
             this.Name = "FrmCruceros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cruceros";
+            this.Controls.SetChildIndex(this.dgvCruceros, 0);
+            this.Controls.SetChildIndex(this.chkAyuda, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCruceros)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

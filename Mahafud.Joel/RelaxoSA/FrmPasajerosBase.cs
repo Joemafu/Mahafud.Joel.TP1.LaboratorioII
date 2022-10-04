@@ -11,7 +11,7 @@ using Entidades;
 
 namespace RelaxoSA
 {
-    internal partial class FrmPasajerosBase : Form
+    internal partial class FrmPasajerosBase : FrmBase
     {
         internal FrmPasajerosBase()
         {
@@ -96,6 +96,23 @@ namespace RelaxoSA
                         p.Equipaje["despachado"]);
                     }
                 }
+            }
+        }
+
+        public override void SetearMensajeAyuda()
+        {
+            this.chkAyuda.Text = "Aquí se listan los pasajeros del viaje seleccionado en pantalla anterior.";
+        }
+
+        private void chkAyuda_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkAyuda.Checked)
+            {
+                this.SetearMensajeAyuda();
+            }
+            else
+            {
+                this.SetearMensajeAyudaADefault();
             }
         }
     }

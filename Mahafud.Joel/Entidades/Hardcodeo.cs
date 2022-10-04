@@ -49,7 +49,7 @@ namespace Entidades
 
         public static List<Viaje> ListaViajesHistoricos
         {
-            get { return Hardcodeo.listaViajesActuales; }
+            get { return Hardcodeo.listaViajesHistoricos; }
             //set { Hardcodeo.ListaViajesHistoricos = value; }
         }
 
@@ -251,8 +251,6 @@ namespace Entidades
             Hardcodeo.listaPasajeros.Add(new Pasajero(true, "Keegan", "Knapp", "8381993", new DateTime(1978, 09, 10), new Pasaporte("KTR56IDX7CI", "Canada", new DateTime(2021, 05, 14), new DateTime(2028, 02, 23)), false));
             Hardcodeo.listaPasajeros.Add(new Pasajero(true, "Dustin", "Herrera", "51052615", new DateTime(1989, 01, 04), new Pasaporte("KXS13LFJ3LC", "Ukraine", new DateTime(2017, 01, 16), new DateTime(2025, 11, 19)), false));
 
-            //Hardcodeo.AgregarPasajerosHardcodeadosAViaje(Hardcodeo.listaViajesActuales);
-            //Hardcodeo.AgregarPasajerosHardcodeadosAViaje(Hardcodeo.listaViajes);
         }
         #endregion
 
@@ -267,6 +265,5 @@ namespace Entidades
                 }
             }
         }
-
     }
 }

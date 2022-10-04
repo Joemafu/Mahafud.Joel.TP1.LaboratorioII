@@ -36,9 +36,16 @@ namespace RelaxoSA
             this.lblCantidadResultados = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // chkAyuda
+            // 
+            this.chkAyuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkAyuda.CheckAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.chkAyuda.Location = new System.Drawing.Point(12, 386);
+            this.chkAyuda.CheckedChanged += new System.EventHandler(this.chkAyuda_CheckedChanged);
+            // 
             // btnBuscar
             // 
-            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnBuscar.Location = new System.Drawing.Point(397, 383);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(167, 23);
@@ -49,7 +56,7 @@ namespace RelaxoSA
             // 
             // lblCriterioDeBusqueda
             // 
-            this.lblCriterioDeBusqueda.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.lblCriterioDeBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCriterioDeBusqueda.AutoSize = true;
             this.lblCriterioDeBusqueda.Location = new System.Drawing.Point(335, 337);
             this.lblCriterioDeBusqueda.Name = "lblCriterioDeBusqueda";
@@ -59,7 +66,7 @@ namespace RelaxoSA
             // 
             // cmbCriterioDeBusqueda
             // 
-            this.cmbCriterioDeBusqueda.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.cmbCriterioDeBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cmbCriterioDeBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCriterioDeBusqueda.FormattingEnabled = true;
             this.cmbCriterioDeBusqueda.Items.AddRange(new object[] {
@@ -76,7 +83,7 @@ namespace RelaxoSA
             // 
             // txtValorDeBusqueda
             // 
-            this.txtValorDeBusqueda.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtValorDeBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtValorDeBusqueda.Location = new System.Drawing.Point(571, 334);
             this.txtValorDeBusqueda.Name = "txtValorDeBusqueda";
             this.txtValorDeBusqueda.Size = new System.Drawing.Size(128, 23);
@@ -105,6 +112,7 @@ namespace RelaxoSA
             this.Name = "FrmPasajerosCompleto";
             this.Text = "FrmPasajerosCompleto";
             this.Load += new System.EventHandler(this.FrmPasajerosCompleto_Load);
+            this.Controls.SetChildIndex(this.chkAyuda, 0);
             this.Controls.SetChildIndex(this.btnBuscar, 0);
             this.Controls.SetChildIndex(this.lblCriterioDeBusqueda, 0);
             this.Controls.SetChildIndex(this.cmbCriterioDeBusqueda, 0);

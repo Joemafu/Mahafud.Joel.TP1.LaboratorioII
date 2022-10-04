@@ -37,6 +37,13 @@ namespace RelaxoSA
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
+            // chkAyuda
+            // 
+            this.chkAyuda.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.chkAyuda.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.chkAyuda.Location = new System.Drawing.Point(12, 60);
+            this.chkAyuda.CheckedChanged += new System.EventHandler(this.chkAyuda_CheckedChanged);
+            // 
             // btnViajes
             // 
             this.btnViajes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -73,7 +80,7 @@ namespace RelaxoSA
             // btnEstadisticas
             // 
             this.btnEstadisticas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEstadisticas.Location = new System.Drawing.Point(735, 260);
+            this.btnEstadisticas.Location = new System.Drawing.Point(594, 260);
             this.btnEstadisticas.Name = "btnEstadisticas";
             this.btnEstadisticas.Size = new System.Drawing.Size(188, 53);
             this.btnEstadisticas.TabIndex = 4;
@@ -84,7 +91,7 @@ namespace RelaxoSA
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(735, 12);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(594, 12);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(188, 53);
             this.btnCerrarSesion.TabIndex = 6;
@@ -107,7 +114,7 @@ namespace RelaxoSA
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(935, 325);
+            this.ClientSize = new System.Drawing.Size(794, 325);
             this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnEstadisticas);
@@ -120,6 +127,13 @@ namespace RelaxoSA
             this.Text = "Cruceros Relaxo S.A.";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmHome_FormClosing);
             this.Load += new System.EventHandler(this.FrmHome_Load);
+            this.Controls.SetChildIndex(this.btnViajes, 0);
+            this.Controls.SetChildIndex(this.btnPasajeros, 0);
+            this.Controls.SetChildIndex(this.btnCruceros, 0);
+            this.Controls.SetChildIndex(this.btnEstadisticas, 0);
+            this.Controls.SetChildIndex(this.btnCerrarSesion, 0);
+            this.Controls.SetChildIndex(this.lblBienvenido, 0);
+            this.Controls.SetChildIndex(this.chkAyuda, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 

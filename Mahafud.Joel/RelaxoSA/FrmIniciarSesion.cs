@@ -11,7 +11,7 @@ using Entidades;
 
 namespace RelaxoSA
 {
-    internal partial class FrmIniciarSesion : Form
+    internal partial class FrmIniciarSesion : FrmBase
     {
         internal FrmIniciarSesion()
         {
@@ -53,7 +53,7 @@ namespace RelaxoSA
                         this.Hide();
                         FrmHome formHome = new FrmHome(this);
 
-                        formHome.setearBienvenida(item.Nombre);
+                        formHome.SetearBienvenida(item.Nombre);
                         formHome.Show();
                         LimpiarCampos(false);
 
@@ -70,6 +70,22 @@ namespace RelaxoSA
             }
         }
 
-        
+        private void chkAyuda_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkAyuda.Checked)
+            {
+                this.SetearMensajeAyuda();
+            }
+            else
+            {
+                this.SetearMensajeAyudaADefault();
+            }
+        }
+
+        public override void SetearMensajeAyuda()
+        {
+            this.chkAyuda.Text = "" +
+                "Inicie Sesión.";
+        }
     }
 }

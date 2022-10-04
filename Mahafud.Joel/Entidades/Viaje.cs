@@ -132,12 +132,49 @@ namespace Entidades
             bool esPremium = pasajero.EsPremium;
             int kgsDespacho = pasajero.GetDespachadoEnKgs;
             
-            if((esPremium && viaje.CamarotesPremiumDisponibles > 0 || !esPremium && viaje.CamarotesTuristaDisponibles > 0) && kgsDespacho<viaje.DisponibilidadBodegaKgs)
+            if((esPremium && viaje.CamarotesPremiumDisponibles > 0 || !esPremium && viaje.CamarotesTuristaDisponibles > 0) && kgsDespacho<viaje.DisponibilidadBodegaKgs && viaje!=pasajero)
             {
                 viaje.pasajeros.Add(pasajero);
             }
             return viaje;
         }
+
+        public static bool operator == (Viaje viaje, Pasajero pasajero)
+        {
+            bool ret = false;
+
+            foreach(Pasajero p in viaje.Pasajeros)
+            {
+                if (pasajero.Dni==p.Dni)
+                {
+                    ret = true;
+                    break;
+                }
+            }
+
+            return ret;
+        }
+
+        public static bool operator !=(Viaje viaje, Pasajero pasajero)
+        {
+            return !(viaje == pasajero);
+        }
+
+        public override bool Equals(object obj)
+        {
+            bool ret=false;
+            if (obj is not null && obj is Viaje)
+            {
+                ret = this == obj;
+            }
+            return ret;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
 
         private string FormatearDestino()
         {

@@ -11,7 +11,7 @@ using Entidades;
 
 namespace RelaxoSA
 {
-    internal partial class FrmCruceros : Form
+    internal partial class FrmCruceros : FrmBase
     {
         internal FrmCruceros()
         {
@@ -37,6 +37,23 @@ namespace RelaxoSA
                     c.Salones["casinos"],
                     c.Salones["restaurantes"],
                     c.CapacidadBodegaKgs);
+            }
+        }
+
+        public override void SetearMensajeAyuda()
+        {
+            this.chkAyuda.Text = "Aquí se lista la flota entera de la compañía";
+        }
+
+        private void chkAyuda_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkAyuda.Checked)
+            {
+                this.SetearMensajeAyuda();
+            }
+            else
+            {
+                this.SetearMensajeAyudaADefault();
             }
         }
     }

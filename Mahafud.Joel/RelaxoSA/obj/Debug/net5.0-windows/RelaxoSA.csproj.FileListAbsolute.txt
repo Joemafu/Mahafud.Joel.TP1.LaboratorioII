@@ -19,7 +19,6 @@ G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.Labor
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmCruceros.resources
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmEstadisticas.resources
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmIniciarSesion.resources
-G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmViajes.resources
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\bin\Debug\net5.0-windows\Entidades.dll
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\bin\Debug\net5.0-windows\Entidades.pdb
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.csproj.CopyComplete
@@ -27,3 +26,6 @@ G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.Labor
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmAltaPasajero.resources
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmPasajerosBase.resources
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmPasajerosCompleto.resources
+G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmViajesBase.resources
+G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmBase.resources
+G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmViajesVenta.resources
