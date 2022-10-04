@@ -13,26 +13,19 @@ namespace Entidades
         private DateTime fechaRegreso;
         private Crucero crucero;
         private List<Pasajero> pasajeros;
-        /*private int camarotesTuristaDisponibles;
-        private int camarotesPremiumDisponibles;*/
-        private int capacidadDespachoDisponible;
 
-        /*private int asientosTuristaTotales;
-        private int asientosTuristaDisponibles;
-        private int asientosPremiumTotales;
-        private int asientosPremiumDisponibles;*/
+        private List<Camarote> camarotesPremium;
+        private List<Camarote> camarotesTurista;
+        private int cantidadCamarotesPremium;
+        private int cantidadCamarotesTurista;
 
         private EDestino destino;
         private bool regional;
-        /*EDisponibilidad disponibilidadPremium;
-        EDisponibilidad disponibilidadTurista;
-        EDisponibilidad disponibilidadDespacho;*/
         private double tarifaPremium;
         private double tarifaTurista;
         private int duracionEnHs;
         private int id;
         private static int ultimoIdUsado;
-
 
         static Viaje()
         {
@@ -44,23 +37,15 @@ namespace Entidades
             Viaje.ultimoIdUsado++;
             this.id = Viaje.ultimoIdUsado;
             Random random = new Random();
+
             this.pasajeros = new List<Pasajero>();
+
+            this.camarotesPremium = new List<Camarote>();
+            this.camarotesTurista = new List<Camarote>();
 
             this.fechaPartida = fechaPartida;
             this.crucero = crucero;
             this.destino = destino;
-
-            /*this.camarotesPremiumDisponibles = (int)Math.Round(crucero.CantidadCamarotesPremium * 0.35);
-            this.camarotesTuristaDisponibles = (int)Math.Round(crucero.CantidadCamarotesTurista * 0.65);*/
-            
-            /*this.asientosTuristaTotales = this.camarotesTuristaDisponibles * 4;
-            this.asientosTuristaDisponibles = this.asientosTuristaTotales;
-
-            this.asientosPremiumTotales = this.camarotesPremiumDisponibles * 4;
-            this.asientosPremiumDisponibles = this.asientosPremiumTotales;*/
-
-            /*this.disponibilidadPremium = EDisponibilidad.Alta;
-            this.disponibilidadTurista = EDisponibilidad.Alta;*/
             
             if (((int)this.destino)<10)
             {
@@ -104,7 +89,9 @@ namespace Entidades
             //set { }
         }
 
-        public List<Pasajero> Pasajeros { get { return this.pasajeros; }
+        public List<Pasajero> Pasajeros
+        {
+            get { return this.pasajeros; }
             //set { }
         }
 
@@ -116,30 +103,25 @@ namespace Entidades
             //set { }
         }
 
-        public int CamarotesPremiumDisponibles { get { return this.ActualizarDisponibilidadPasajeros(true, this.crucero.CantidadCamarotesPremium); }
-            //set { }
-        }
-
-        public int CamarotesTuristaDisponibles { get { return this.ActualizarDisponibilidadPasajeros(false, this.crucero.CantidadCamarotesTurista); }
-            //set { }
-        }
-
-        public EDisponibilidad DisponibilidadPremium { get { return CalcularDisponibilidad(CamarotesPremiumDisponibles, this.crucero.CantidadCamarotesPremium); }
-            //set { }
-        }
-
-        public EDisponibilidad DisponibilidadTurista { get { return CalcularDisponibilidad(CamarotesTuristaDisponibles, this.crucero.CantidadCamarotesTurista); }
-            //set { }
-        }
-
-        /*public EDisponibilidad DisponibilidadBodegaKgs
+        public int CamarotesPremiumDisponibles
         {
-            get
-            {
-                return CalcularDisponibilidad(this.CalcularCargaEnBodega(), this.crucero.CapacidadBodegaKgs);
-            }
+            get { return this.ActualizarDisponibilidadPasajeros(true, this.crucero.CantidadCamarotesPremium); }
             //set { }
-        }*/
+        }
+
+        public int CamarotesTuristaDisponibles
+        {
+            get { return this.ActualizarDisponibilidadPasajeros(false, this.crucero.CantidadCamarotesTurista); }
+            //set { }
+        }
+
+        public EDisponibilidad DisponibilidadPremium { get { return CalcularDisponibilidad(this.CamarotesPremiumDisponibles, this.crucero.CantidadCamarotesPremium); }
+            //set { }
+        }
+
+        public EDisponibilidad DisponibilidadTurista { get { return CalcularDisponibilidad(this.CamarotesTuristaDisponibles, this.crucero.CantidadCamarotesTurista); }
+            //set { }
+        }
 
         public int DisponibilidadBodegaKgs { get { return this.crucero.CapacidadBodegaKgs - this.CalcularCargaEnBodega(); }
             //set { }
@@ -148,45 +130,14 @@ namespace Entidades
         public static Viaje operator+(Viaje viaje, Pasajero pasajero)
         {
             bool esPremium = pasajero.EsPremium;
+            int kgsDespacho = pasajero.GetDespachadoEnKgs;
             
-            if(esPremium && viaje.CamarotesPremiumDisponibles > 0 || !esPremium && viaje.CamarotesTuristaDisponibles > 0)
+            if((esPremium && viaje.CamarotesPremiumDisponibles > 0 || !esPremium && viaje.CamarotesTuristaDisponibles > 0) && kgsDespacho<viaje.DisponibilidadBodegaKgs)
             {
                 viaje.pasajeros.Add(pasajero);
             }
             return viaje;
         }
-
-        /*private void ActualizarDisponibilidadPremium()
-        {
-            int aux;
-
-            aux = this.crucero.CantidadCamarotesPremium;
-            foreach (Pasajero item in this.pasajeros)
-            {
-                if (item.EsPremium)
-                {
-                    aux--;
-                }
-            }
-            this.camarotesPremiumDisponibles = aux;
-
-            disponibilidadPremium = EDisponibilidad.Alta;
-            if (aux < this.crucero.CamarotesPremium.Count * 0.65)
-            {
-                disponibilidadPremium = EDisponibilidad.Media;
-
-                if (aux < this.crucero.CamarotesPremium.Count * 0.30)
-                {
-                    disponibilidadPremium = EDisponibilidad.Baja;
-
-                    if (aux == 0)
-                    {
-                        disponibilidadPremium = EDisponibilidad.Agotado;
-                    }
-                }
-
-            }
-        }*/
 
         private string FormatearDestino()
         {
@@ -233,7 +184,7 @@ namespace Entidades
             return ret;
         }
 
-        private int ActualizarDisponibilidadPasajeros (bool esPremium, int capacidadMaxima)
+        private int ActualizarDisponibilidadPasajeros(bool esPremium, int capacidadMaxima)
         {
             int capacidadActual = capacidadMaxima;
 
@@ -243,7 +194,7 @@ namespace Entidades
                 {
                     capacidadActual--;
                 }
-            }
+            }           
 
             return capacidadActual;
         }
@@ -272,13 +223,13 @@ namespace Entidades
 
         private int CalcularCargaEnBodega()
         {
-            int ret = 0;
+            int ret = -100;
 
             foreach (Pasajero item in this.pasajeros)
             {
                 ret += item.GetDespachadoEnKgs;
             }
-
+            
             return ret;
         }
 
@@ -296,38 +247,5 @@ namespace Entidades
             }
             return auxViaje;
         }
-
-
-        /*private void ActualizarDisponibilidadTurista()
-        {
-            int aux;
-
-            aux = this.crucero.CantidadCamarotesTurista;
-            foreach (Pasajero item in this.pasajeros)
-            {
-                if (!item.EsPremium)
-                {
-                    aux--;
-                }
-            }
-            this.camarotesTuristaDisponibles = aux;
-
-            disponibilidadTurista = EDisponibilidad.Alta;
-            if (aux < this.crucero.CamarotesTurista.Count * 0.65)
-            {
-                disponibilidadTurista = EDisponibilidad.Media;
-
-                if (aux < this.crucero.CamarotesTurista.Count * 0.30)
-                {
-                    disponibilidadTurista = EDisponibilidad.Baja;
-
-                    if (aux == 0)
-                    {
-                        disponibilidadTurista = EDisponibilidad.Agotado;
-                    }
-                }
-
-            }
-        }*/
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RelaxoSA
 {
-    public partial class FrmAltaModificacionAbs : Form
+    internal partial class FrmAltaModificacionAbs : Form
     {
-        public FrmAltaModificacionAbs()
+        internal FrmAltaModificacionAbs()
         {
             InitializeComponent();
         }

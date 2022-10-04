@@ -21,5 +21,41 @@ namespace Entidades
             this.nacionalidad = nacionalidad;
         }
 
+        public string NroPasaporte
+        {
+            get
+            {
+                return this.nroPasaporte;
+            }
+            //set;
+        }
+
+        public string Nacionalidad
+        {
+            get
+            {
+                return this.nacionalidad;
+            }
+            //set;
+        }
+
+        public DateTime FechaExpedicion
+        {
+            get
+            {
+                return this.fechaExpedicion;
+            }
+            //set;
+        }
+
+        public DateTime FechaVencimiento
+        {
+            get
+            {
+                return this.fechaVencimiento;
+            }
+            //set;
+        }
+
     }
 }

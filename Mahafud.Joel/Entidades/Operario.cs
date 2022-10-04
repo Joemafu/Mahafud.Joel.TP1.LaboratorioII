@@ -8,10 +8,10 @@ namespace Entidades
 {
     public class Operario : Persona
     {
-        string usuario;
-        string contrasenia;
+        private string usuario;
+        private string contrasenia;
 
-        /*public string Nombre 
+        /*internal string Nombre 
         {
             get 
             {
@@ -24,6 +24,33 @@ namespace Entidades
         {
             this.usuario = usuario;
             this.contrasenia = contrasenia;
+        }
+
+        new public string Nombre
+        {
+            get
+            {
+                return base.Nombre;
+            }
+            //set { }
+        }
+
+        new public string Apellido
+        {
+            get
+            {
+                return base.Apellido;
+            }
+            //set { }
+        }
+
+        new public string Dni
+        {
+            get
+            {
+                return base.Dni;
+            }
+            //set { }
         }
 
         public static bool operator ==(Operario op1, Operario op2)

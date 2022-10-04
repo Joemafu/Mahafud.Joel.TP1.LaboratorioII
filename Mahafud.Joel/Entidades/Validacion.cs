@@ -8,7 +8,7 @@ namespace Entidades
 {
     public abstract class Validacion
     {
-        public static bool ValidarTexto(string textoIngresado)
+        private static bool ValidarTexto(string textoIngresado)
         {
             bool ret = false;
 
@@ -29,7 +29,7 @@ namespace Entidades
                 minuscula = textoIngresado.ToLower();
                 foreach (char item in minuscula)
                 {
-                    if (item < 'a' || item > 'z')
+                    if ((item < 'a' || item > 'z') && item != ' ')
                     {
                         ret = false;
                         break;
@@ -74,5 +74,7 @@ namespace Entidades
             }
             return ret;
         }
+
+
     }
 }

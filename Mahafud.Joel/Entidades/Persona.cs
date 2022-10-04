@@ -8,14 +8,14 @@ namespace Entidades
         private string apellido;
         private string dni;
 
-        public Persona(string nombre, string apellido, string dni)
+        internal Persona(string nombre, string apellido, string dni)
         {
             this.nombre = nombre;
             this.apellido = apellido;
             this.dni = dni;
         }
 
-        public string Nombre
+        internal string Nombre
         {
             get
             {
@@ -24,7 +24,7 @@ namespace Entidades
             //set;
         }
 
-        public string Apellido
+        internal string Apellido
         {
             get
             {
@@ -33,7 +33,7 @@ namespace Entidades
             //set;
         }
 
-        public string Dni
+        internal string Dni
         {
             get
             {

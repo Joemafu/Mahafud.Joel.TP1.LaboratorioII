@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RelaxoSA
 {
-    public partial class FrmEstadisticas : Form
+    internal partial class FrmEstadisticas : Form
     {
-        public FrmEstadisticas()
+        internal FrmEstadisticas()
         {
             InitializeComponent();
         }

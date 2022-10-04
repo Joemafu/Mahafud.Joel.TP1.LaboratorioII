@@ -1,7 +1,7 @@
 ﻿
 namespace RelaxoSA
 {
-    public partial class FrmAltaModificacionAbs
+    internal partial class FrmAltaModificacionAbs
     {
         /// <summary>
         /// Required designer variable.

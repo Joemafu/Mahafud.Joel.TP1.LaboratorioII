@@ -66,7 +66,7 @@ namespace RelaxoSA
             this.btnCruceros.Name = "btnCruceros";
             this.btnCruceros.Size = new System.Drawing.Size(188, 53);
             this.btnCruceros.TabIndex = 3;
-            this.btnCruceros.Text = "Ver Cruceros";
+            this.btnCruceros.Text = "Ver Flota";
             this.btnCruceros.UseVisualStyleBackColor = true;
             this.btnCruceros.Click += new System.EventHandler(this.btnCruceros_Click);
             // 
@@ -105,6 +105,7 @@ namespace RelaxoSA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(935, 325);
             this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.btnCerrarSesion);
@@ -112,7 +113,7 @@ namespace RelaxoSA
             this.Controls.Add(this.btnCruceros);
             this.Controls.Add(this.btnPasajeros);
             this.Controls.Add(this.btnViajes);
-            this.MinimumSize = new System.Drawing.Size(415, 340);
+            this.MinimumSize = new System.Drawing.Size(810, 364);
             this.Name = "FrmHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cruceros Relaxo S.A.";
@@ -128,7 +129,7 @@ namespace RelaxoSA
         protected internal System.Windows.Forms.Button btnPasajeros;
         protected internal System.Windows.Forms.Button btnCruceros;
         protected internal System.Windows.Forms.Button btnCerrarSesion;
-        public System.Windows.Forms.Button btnEstadisticas;
+        internal System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.Label lblBienvenido;
     }
 }

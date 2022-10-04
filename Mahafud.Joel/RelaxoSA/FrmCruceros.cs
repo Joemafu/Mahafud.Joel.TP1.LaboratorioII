@@ -11,21 +11,33 @@ using Entidades;
 
 namespace RelaxoSA
 {
-    public partial class FrmCruceros : Form
+    internal partial class FrmCruceros : Form
     {
-        public FrmCruceros()
+        internal FrmCruceros()
         {
             InitializeComponent();
         }
 
-        public FrmCruceros(List<Crucero> cruceros) : this()
+        internal FrmCruceros(List<Crucero> cruceros) : this()
         {
-            FrmHome.ListarCrucerosEnDGV(cruceros, this.dgvCruceros);
+            FrmCruceros.ListarCrucerosEnDGV(cruceros, this.dgvCruceros);
         }
 
-        private void FrmCruceros_Load(object sender, EventArgs e)
+        internal static void ListarCrucerosEnDGV(List<Crucero> cruceros, DataGridView dgv)
         {
-            
+            dgv.Rows.Clear();
+            foreach (Crucero c in cruceros)
+            {
+                dgv.Rows.Add(
+                    c.Nombre,
+                    c.Matricula,
+                    c.CantidadCamarotesPremium,
+                    c.CantidadCamarotesTurista,
+                    c.Salones["piletas"],
+                    c.Salones["casinos"],
+                    c.Salones["restaurantes"],
+                    c.CapacidadBodegaKgs);
+            }
         }
     }
 }

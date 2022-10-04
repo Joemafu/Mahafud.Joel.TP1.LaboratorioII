@@ -35,7 +35,7 @@ namespace Entidades
                 this.camarotesTurista.Add(new Camarote(false, i+1));
             }
         }
-        public Crucero (int cantidadCamarotes, string matricula,string nombre, int piletas,int casinos, int restaurantes, int capacidadBodegaKgs) : this(cantidadCamarotes)
+        internal Crucero (int cantidadCamarotes, string matricula,string nombre, int piletas,int casinos, int restaurantes, int capacidadBodegaKgs) : this(cantidadCamarotes)
         {
             //this.cantidadCamarotes = cantidadCamarotes;
             this.matricula = matricula;
@@ -100,13 +100,12 @@ namespace Entidades
         {
             get
             {
-
                 return this.capacidadBodegaKgs;
             }
             //set { }
         }
 
-        public List<Camarote> CamarotesPremium
+        internal List<Camarote> CamarotesPremium
         {
             get
             {
@@ -115,7 +114,7 @@ namespace Entidades
             //set { }
         }
 
-        public List<Camarote> CamarotesTurista
+        internal List<Camarote> CamarotesTurista
         {
             get
             {
@@ -124,7 +123,7 @@ namespace Entidades
             //set { }
         }
 
-        /*public override string ToString()
+        /*internal override string ToString()
         {
             StringBuilder sb = new StringBuilder();
 
@@ -139,7 +138,7 @@ namespace Entidades
             return "";
         }*/
 
-        /*public static implicit operator string(Crucero crucero)
+        /*internal static implicit operator string(Crucero crucero)
         {
             return crucero.ToString();
         }*/

@@ -11,21 +11,21 @@ using Entidades;
 
 namespace RelaxoSA
 {
-    public partial class FrmHome : Form
+    internal partial class FrmHome : Form
     {
         private FrmIniciarSesion frmIniciarSesion;
        
-        public FrmHome()
+        internal FrmHome()
         {
             InitializeComponent();
         }
 
-        public FrmHome(FrmIniciarSesion frmIniciarSesion) : this()
+        internal FrmHome(FrmIniciarSesion frmIniciarSesion) : this()
         {
             this.frmIniciarSesion = frmIniciarSesion;
         }
 
-        public void setearBienvenida(string nombreDelOperario)
+        internal void setearBienvenida(string nombreDelOperario)
         {
             this.lblBienvenido.Text = $"Bienvenido {nombreDelOperario}! Hoy es {DateTime.Today.ToShortDateString()}";
         }
@@ -38,26 +38,18 @@ namespace RelaxoSA
 
         private void FrmHome_Load(object sender, EventArgs e)
         {
-            Hardcodeo hC = new Hardcodeo();
-
-            /*FrmHome.ListarViajesEnDGV(Hardcodeo.ListaViajes,this.dgvViajes);
-            FrmHome.ListarCrucerosEnDGV(Hardcodeo.ListaCruceros,this.dgvCruceros);*/
+            
         }
 
         private void FrmHome_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.frmIniciarSesion.Dispose();
-        }
-
-        
-
-        
-
-        public static void ListarCrucerosEnDGV(List<Crucero> cruceros, DataGridView dgv)
-        {
-            foreach (Crucero c in cruceros)
+            if(MessageBox.Show("¿Está seguro de que quiere salir de la aplicación?", "Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2)==DialogResult.OK)
             {
-                dgv.Rows.Add(c.Nombre, c.Matricula, c.CantidadCamarotesPremium, c.CantidadCamarotesTurista, c.Salones["piletas"],c.Salones["casinos"],c.Salones["restaurantes"], c.CapacidadBodegaKgs);
+                this.frmIniciarSesion.Dispose();
+            }
+            else
+            {
+                e.Cancel = true;
             }
         }
 
@@ -82,26 +74,6 @@ namespace RelaxoSA
             frmCruceros.ShowDialog();
         }        
 
-        public static int LocalizarIndiceFilaSeleccionada(DataGridView dgv)
-        {
-            int i=0;
-            bool encontrado = false;
-
-            for (; i < dgv.RowCount; i++)
-            {
-                if (dgv.Rows[i].Selected)
-                {
-                    encontrado = true;
-                    break;
-                }
-            }
-
-            if(!encontrado)
-            {
-                i = -1;
-            }
-
-            return i;
-        }
+        
     }
 }

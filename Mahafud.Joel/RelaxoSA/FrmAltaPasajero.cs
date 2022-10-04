@@ -11,30 +11,47 @@ using Entidades;
 
 namespace RelaxoSA
 {
-    public partial class FrmAltaPasajero : FrmAltaModificacionAbs
+    internal partial class FrmAltaPasajero : FrmAltaModificacionAbs
     {
         private FrmAltaPasajero()
         {
             InitializeComponent();
         }
 
-        public FrmAltaPasajero(bool esPremium, Viaje viaje) : this()
+        internal FrmAltaPasajero(bool esPremium, Viaje viaje) : this()
         {
             this.lblDestino.Text = $"Destino a {viaje.Destino}";
             this.cmbxNacionalidad.Text = "Argentina";
             this.lblId.Text = viaje.Id.ToString();
+            double precioNeto;
+            double tasas;
+            double iva;
+            double precioBruto;
 
             if (esPremium)
             {
                 this.lblClase.Text = $"Clase Premium - viaje ID";
-                this.lblTotalPrecio.Text = $"${viaje.TarifaPremium.ToString("N2")}";
+                precioNeto = viaje.TarifaPremium;
+                this.lblTotalPrecio.Text = $"${precioNeto.ToString("N2")}";
             }
             else
             {
                 this.lblClase.Text = $"Clase Turista - viaje ID";
-                this.lblTotalPrecio.Text = $"${viaje.TarifaTurista.ToString("N2")}";
+                precioNeto = viaje.TarifaTurista;
+                this.lblTotalPrecio.Text = $"${precioNeto.ToString("N2")}";
                 this.rbtnDosDespachos.Enabled = false;
             }
+
+            
+            precioBruto = precioNeto * 100 / 139;
+            tasas = precioBruto * 0.18;
+            iva = precioBruto * 0.21;
+
+            this.lblTasasAdicionalesPrecio.Text = tasas.ToString("N2");
+            this.lblIvaPrecio.Text = iva.ToString("N2");
+            this.lblPrecioBase.Text = precioBruto.ToString("N2");
+
+            
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -71,13 +88,13 @@ namespace RelaxoSA
                     {
                         Hardcodeo.ListaViajes[i] = Hardcodeo.ListaViajes[i] + pasajero;
                         this.DialogResult = DialogResult.OK;
-                        MessageBox.Show("Pasajero agregado correctamente", "Hurra!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Pasajero agregado correctamente", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Datos incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Datos inválidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

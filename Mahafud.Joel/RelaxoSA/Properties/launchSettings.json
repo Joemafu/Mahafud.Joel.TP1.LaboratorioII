@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RelaxoSA": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false
+    }
+  }
+}

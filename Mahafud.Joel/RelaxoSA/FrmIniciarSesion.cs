@@ -11,11 +11,12 @@ using Entidades;
 
 namespace RelaxoSA
 {
-    public partial class FrmIniciarSesion : Form
+    internal partial class FrmIniciarSesion : Form
     {
-        public FrmIniciarSesion()
+        internal FrmIniciarSesion()
         {
             InitializeComponent();
+            Hardcodeo hC = new Hardcodeo();
 
         }
 
@@ -37,7 +38,10 @@ namespace RelaxoSA
         {
             bool logInExitoso = false;
 
+
+
             List<Operario> listaOperarios = Hardcodeo.ListaOperarios;
+
 
             if (!String.IsNullOrWhiteSpace(this.txtUser.Text) && !String.IsNullOrWhiteSpace(this.txtPassword.Text))
             {

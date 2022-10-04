@@ -36,7 +36,7 @@ namespace RelaxoSA
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnVentaPremium = new System.Windows.Forms.Button();
             this.btnVentaTurista = new System.Windows.Forms.Button();
-            this.lblSalones = new System.Windows.Forms.Label();
+            this.lblDetalle = new System.Windows.Forms.Label();
             this.dgvViajes = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,12 +53,14 @@ namespace RelaxoSA
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPasajeros = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViajes)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVentaPremium
             // 
-            this.btnVentaPremium.Location = new System.Drawing.Point(12, 538);
+            this.btnVentaPremium.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnVentaPremium.Location = new System.Drawing.Point(12, 495);
             this.btnVentaPremium.Name = "btnVentaPremium";
             this.btnVentaPremium.Size = new System.Drawing.Size(156, 23);
             this.btnVentaPremium.TabIndex = 10;
@@ -68,7 +70,8 @@ namespace RelaxoSA
             // 
             // btnVentaTurista
             // 
-            this.btnVentaTurista.Location = new System.Drawing.Point(174, 538);
+            this.btnVentaTurista.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnVentaTurista.Location = new System.Drawing.Point(174, 495);
             this.btnVentaTurista.Name = "btnVentaTurista";
             this.btnVentaTurista.Size = new System.Drawing.Size(156, 23);
             this.btnVentaTurista.TabIndex = 11;
@@ -76,13 +79,16 @@ namespace RelaxoSA
             this.btnVentaTurista.UseVisualStyleBackColor = true;
             this.btnVentaTurista.Click += new System.EventHandler(this.btnVentaTurista_Click);
             // 
-            // lblSalones
+            // lblDetalle
             // 
-            this.lblSalones.AutoSize = true;
-            this.lblSalones.Location = new System.Drawing.Point(12, 265);
-            this.lblSalones.Name = "lblSalones";
-            this.lblSalones.Size = new System.Drawing.Size(0, 15);
-            this.lblSalones.TabIndex = 12;
+            this.lblDetalle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblDetalle.AutoSize = true;
+            this.lblDetalle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblDetalle.Location = new System.Drawing.Point(12, 338);
+            this.lblDetalle.Name = "lblDetalle";
+            this.lblDetalle.Size = new System.Drawing.Size(261, 19);
+            this.lblDetalle.TabIndex = 12;
+            this.lblDetalle.Text = "Seleccione un viaje para más información.";
             // 
             // dgvViajes
             // 
@@ -92,9 +98,10 @@ namespace RelaxoSA
             this.dgvViajes.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.NullValue = "--";
             this.dgvViajes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvViajes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvViajes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvViajes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvViajes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvViajes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvViajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvViajes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -117,10 +124,11 @@ namespace RelaxoSA
             this.dgvViajes.Location = new System.Drawing.Point(12, 12);
             this.dgvViajes.MultiSelect = false;
             this.dgvViajes.Name = "dgvViajes";
+            this.dgvViajes.RowHeadersVisible = false;
             this.dgvViajes.RowTemplate.Height = 25;
             this.dgvViajes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvViajes.ShowEditingIcon = false;
-            this.dgvViajes.Size = new System.Drawing.Size(1814, 240);
+            this.dgvViajes.Size = new System.Drawing.Size(1310, 323);
             this.dgvViajes.TabIndex = 13;
             this.dgvViajes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViajes_CellClick);
             this.dgvViajes.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvViajes_KeyUp);
@@ -129,31 +137,26 @@ namespace RelaxoSA
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 43;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.HeaderText = "Disponibilidad Premium";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 146;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Disponibilidad Turista";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 133;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Destino";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 72;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "Origen";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 68;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -162,7 +165,6 @@ namespace RelaxoSA
             this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn6.HeaderText = "Tarifa premium";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 103;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -171,13 +173,11 @@ namespace RelaxoSA
             this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn7.HeaderText = "Tarifa Turista";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 90;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.HeaderText = "Duracion (Hs.)";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 99;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -186,7 +186,6 @@ namespace RelaxoSA
             this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn9.HeaderText = "Fecha de partida";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 109;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -195,47 +194,54 @@ namespace RelaxoSA
             this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn10.HeaderText = "Fecha de regreso";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 111;
             // 
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.HeaderText = "Embarcación";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 101;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.HeaderText = "Camarotes Premium disponibles";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 186;
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.HeaderText = "Camarotes turista disponibles";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 171;
             // 
             // dataGridViewTextBoxColumn14
             // 
             this.dataGridViewTextBoxColumn14.HeaderText = "Boletos vendidos";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Width = 112;
             // 
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.HeaderText = "Kgs restantes en bodega";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Width = 110;
+            // 
+            // btnPasajeros
+            // 
+            this.btnPasajeros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPasajeros.Location = new System.Drawing.Point(1166, 495);
+            this.btnPasajeros.Name = "btnPasajeros";
+            this.btnPasajeros.Size = new System.Drawing.Size(156, 23);
+            this.btnPasajeros.TabIndex = 14;
+            this.btnPasajeros.Text = "Ver Pasajeros";
+            this.btnPasajeros.UseVisualStyleBackColor = true;
+            this.btnPasajeros.Click += new System.EventHandler(this.btnPasajeros_Click);
             // 
             // FrmViajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1850, 573);
+            this.ClientSize = new System.Drawing.Size(1334, 524);
+            this.Controls.Add(this.btnPasajeros);
             this.Controls.Add(this.dgvViajes);
-            this.Controls.Add(this.lblSalones);
+            this.Controls.Add(this.lblDetalle);
             this.Controls.Add(this.btnVentaTurista);
             this.Controls.Add(this.btnVentaPremium);
+            this.MinimumSize = new System.Drawing.Size(810, 372);
             this.Name = "FrmViajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Viajes";
@@ -248,7 +254,7 @@ namespace RelaxoSA
         #endregion
         private System.Windows.Forms.Button btnVentaPremium;
         private System.Windows.Forms.Button btnVentaTurista;
-        private System.Windows.Forms.Label lblSalones;
+        private System.Windows.Forms.Label lblDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn cId;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDisponibilidadPremium;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDisponibilidadTurista;
@@ -264,7 +270,7 @@ namespace RelaxoSA
         private System.Windows.Forms.DataGridViewTextBoxColumn cCamarotesTuristaDisponibles;
         private System.Windows.Forms.DataGridViewTextBoxColumn cPasajeros;
         private System.Windows.Forms.DataGridViewTextBoxColumn cKgsRestantesEnBodega;
-        public System.Windows.Forms.DataGridView dgvViajes;
+        internal System.Windows.Forms.DataGridView dgvViajes;
         protected internal System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         protected internal System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         protected internal System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -280,5 +286,6 @@ namespace RelaxoSA
         protected internal System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         protected internal System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         protected internal System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.Button btnPasajeros;
     }
 }
