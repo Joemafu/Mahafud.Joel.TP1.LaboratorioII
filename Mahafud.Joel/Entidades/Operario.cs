@@ -11,15 +11,6 @@ namespace Entidades
         private string usuario;
         private string contrasenia;
 
-        /*internal string Nombre 
-        {
-            get 
-            {
-                return base.Nombre;
-            }
-            //set;
-        }*/
-
         public Operario(string nombre, string apellido, string dni, string usuario, string contrasenia) : base(nombre, apellido, dni)
         {
             this.usuario = usuario;

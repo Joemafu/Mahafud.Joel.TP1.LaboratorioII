@@ -8,7 +8,7 @@ namespace Entidades
 {
     public abstract class Validacion
     {
-        private static bool ValidarTexto(string textoIngresado)
+        public static bool ValidarTexto(string textoIngresado)
         {
             bool ret = false;
 
@@ -18,6 +18,8 @@ namespace Entidades
             }
             return ret;
         }
+
+
 
         public static bool ValidarAlfabetico(string textoIngresado)
         {

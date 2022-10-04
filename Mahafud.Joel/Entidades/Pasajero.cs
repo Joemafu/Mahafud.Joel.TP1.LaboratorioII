@@ -19,14 +19,15 @@ namespace Entidades
 
         private bool esPremium;
 
-
-        /*private int numeroDeCamarote;
-        private static int numAsignacíonCamarote; //Solo para el Hardcodeo
+        private string numeroDeCamarote;
+        private static int numAsignacíonCamarotePremium; //Solo para el Hardcodeo
+        private static int numAsignacíonCamaroteTurista; //Solo para el Hardcodeo
 
         static Pasajero()
         {
-            Pasajero.numAsignacíonCamarote = 1; //Solo para el Hardcodeo
-        }*/
+            Pasajero.numAsignacíonCamarotePremium = 1; //Solo para el Hardcodeo
+            Pasajero.numAsignacíonCamaroteTurista = 1; //Solo para el Hardcodeo
+        }
 
         public Pasajero(string nombre, string apellido, string dni, DateTime fechaDeNacimiento, Pasaporte pasaporte, bool esPremium, int equipajeDeMano, int equipajeDespachado) : base(nombre, apellido, dni)
         {
@@ -47,16 +48,45 @@ namespace Entidades
             Random random = new Random();
             this.edad = Pasajero.CalcularEdad(fechaDeNacimiento);
             this.equipaje["deMano"] = random.Next(0,2);
-            if(this.esPremium)
+            int maxDespachados=3;
+            string auxNumCamarote = "P"+ Pasajero.numAsignacíonCamarotePremium.ToString("00");
+
+            if (this.esPremium)
             {
-                this.equipaje["despachado"] = random.Next(0, 3);
+                Pasajero.numAsignacíonCamarotePremium++;
             }
             else
             {
-                this.equipaje["despachado"] = random.Next(0, 2);
+                maxDespachados = 2;
+                auxNumCamarote = "T"+ Pasajero.numAsignacíonCamaroteTurista.ToString("00");
+                Pasajero.numAsignacíonCamaroteTurista++;
             }
-            /*this.numeroDeCamarote = Pasajero.numAsignacíonCamarote;
-            Pasajero.numAsignacíonCamarote++;*/
+
+            this.equipaje["despachado"] = random.Next(0, maxDespachados);
+            this.numeroDeCamarote = auxNumCamarote;
+        }
+
+        public string NumeroDeCamarote
+        {
+            get
+            {
+                return this.numeroDeCamarote;
+            }
+            //set { }
+        }
+
+        public string Clase
+        {
+            get
+            {
+                string clase = "Turista";
+                if (this.esPremium)
+                {
+                    clase = "Premium";
+                }
+                return clase;
+            }
+            //set { }
         }
 
         new public string Nombre

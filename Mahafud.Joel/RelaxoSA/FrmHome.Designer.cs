@@ -79,6 +79,7 @@ namespace RelaxoSA
             this.btnEstadisticas.TabIndex = 4;
             this.btnEstadisticas.Text = "Consultar Estadísticas";
             this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
             // 
             // btnCerrarSesion
             // 

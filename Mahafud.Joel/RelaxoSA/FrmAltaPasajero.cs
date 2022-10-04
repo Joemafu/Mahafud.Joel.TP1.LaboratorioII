@@ -82,11 +82,11 @@ namespace RelaxoSA
                 Pasaporte pasaporte = new Pasaporte(this.txtNumeroPasaporte.Text,this.cmbxNacionalidad.Text,this.datepExpedicionPasaporte.Value,this.datepVencimientoPasaporte.Value);
                 Pasajero pasajero = new Pasajero(this.txtNombre.Text, this.txtApellido.Text, this.txtDni.Text, this.datepFechaNacimiento.Value, pasaporte, this.lblClase.Text== "Clase Premium - viaje ID", equipajeDeMano, equipajesAdicionales);
 
-                for(int i = 0; i<Hardcodeo.ListaViajes.Count;i++)
+                for(int i = 0; i<Hardcodeo.ListaViajesActuales.Count;i++)
                 {
-                    if (Hardcodeo.ListaViajes[i].Id==Int32.Parse(this.lblId.Text))
+                    if (Hardcodeo.ListaViajesActuales[i].Id==Int32.Parse(this.lblId.Text))
                     {
-                        Hardcodeo.ListaViajes[i] = Hardcodeo.ListaViajes[i] + pasajero;
+                        Hardcodeo.ListaViajesActuales[i] = Hardcodeo.ListaViajesActuales[i] + pasajero;
                         this.DialogResult = DialogResult.OK;
                         MessageBox.Show("Pasajero agregado correctamente", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

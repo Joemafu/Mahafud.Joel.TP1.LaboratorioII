@@ -19,10 +19,16 @@
     <Compile Update="FrmIniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmPasajeros.cs">
+    <Compile Update="FrmPasajerosBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmPasajerosCompleto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmViajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmViajesBase.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

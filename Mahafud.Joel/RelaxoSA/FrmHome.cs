@@ -62,7 +62,7 @@ namespace RelaxoSA
 
         private void btnPasajeros_Click(object sender, EventArgs e)
         {
-            FrmPasajeros frmPasajeros = new FrmPasajeros();
+            FrmPasajerosCompleto frmPasajeros = new FrmPasajerosCompleto(Hardcodeo.ListaViajesActuales);
 
             frmPasajeros.ShowDialog();
         }
@@ -72,8 +72,13 @@ namespace RelaxoSA
             FrmCruceros frmCruceros = new FrmCruceros(Hardcodeo.ListaCruceros);
 
             frmCruceros.ShowDialog();
-        }        
+        }
 
-        
+        private void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            FrmEstadisticas frmEstadisticas = new FrmEstadisticas();
+
+            frmEstadisticas.ShowDialog();
+        }
     }
 }

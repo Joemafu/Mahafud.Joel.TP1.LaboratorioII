@@ -16,7 +16,7 @@ namespace RelaxoSA
         internal FrmViajes()
         {
             InitializeComponent();
-            FrmViajes.ListarViajesEnDGV(Hardcodeo.ListaViajes, this.dgvViajes);
+            FrmViajes.ListarViajesEnDGV(Hardcodeo.ListaViajesActuales, this.dgvViajes);
             SetearBotonesVenta(false);
         }
 
@@ -46,7 +46,7 @@ namespace RelaxoSA
             List<Viaje> auxListViajes = new List<Viaje>();
 
             auxListViajes.Add(auxViaje);
-            FrmPasajeros frmPasajeros = new FrmPasajeros(auxListViajes);
+            FrmPasajerosBase frmPasajeros = new FrmPasajerosBase(auxListViajes);
 
             frmPasajeros.ShowDialog();
         }
@@ -140,7 +140,7 @@ namespace RelaxoSA
 
             int idViaje = this.BuscarIdDeViajePorIndiceDeFila(indice);
 
-            Viaje auxViaje = Viaje.BuscarViajePorId(Hardcodeo.ListaViajes, idViaje);
+            Viaje auxViaje = Viaje.BuscarViajePorId(Hardcodeo.ListaViajesActuales, idViaje);
 
             FrmAltaPasajero frmAltaPasajero = new FrmAltaPasajero(esPremium, auxViaje);
 
@@ -148,7 +148,7 @@ namespace RelaxoSA
 
             if (frmAltaPasajero.DialogResult == DialogResult.OK)
             {
-                FrmViajes.ListarViajesEnDGV(Hardcodeo.ListaViajes, this.dgvViajes);
+                FrmViajes.ListarViajesEnDGV(Hardcodeo.ListaViajesActuales, this.dgvViajes);
                 this.SetearBotonesVenta(false);
             }
         }
@@ -161,7 +161,7 @@ namespace RelaxoSA
 
             if (indiceFilaSeleccionada >= 0)
             {
-                auxViaje = Viaje.BuscarViajePorId(Hardcodeo.ListaViajes, idViaje);
+                auxViaje = Viaje.BuscarViajePorId(Hardcodeo.ListaViajesActuales, idViaje);
             }
 
             return auxViaje;
