@@ -84,8 +84,9 @@ namespace RelaxoSA
         public override void SetearMensajeAyuda()
         {
             this.chkAyuda.Text = "" +
-                "Vender Viajes: Lista los viajes programados. Permite vender pasajes y ver pasajeros de los mismos." +
-                "\nBuscar Pasajeros: Filtrar resultados entre los pasajeros de un determinado viaje." +
+                "Vender Pasajes : Lista los viajes programados. Permite vender pasajes y ver pasajeros asociados." +
+                "\nAgregar Viaje: Permite Programar un nuevo viaje un crucero." +
+                "\nBuscar Pasajeros: Filtrar resultados entre toda la base de datos de pasajeros." +
                 "\nVer Flota: Permite consultar los cruceros de la Compañía." +
                 "\nConsultar Estadísticas: Permite revisar datos históricos de la Empresa." +
                 "\nCerrar Sesión: Cierra la sesión actual.";
@@ -101,6 +102,13 @@ namespace RelaxoSA
             {
                 this.SetearMensajeAyudaADefault();
             }
+        }
+
+        private void btnAgregarViaje_Click(object sender, EventArgs e)
+        {
+            FrmViajesAgregar frmAltaViaje = new FrmViajesAgregar();
+
+            frmAltaViaje.ShowDialog();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace RelaxoSA
 {
-    partial class FrmEstadisticas
+    partial class FrmViajesAgregar
     {
         /// <summary>
         /// Required designer variable.
@@ -29,39 +29,36 @@ namespace RelaxoSA
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnVerMasEstadisticas = new System.Windows.Forms.Button();
+            this.btnAltaviaje = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // chkAyuda
             // 
             this.chkAyuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.chkAyuda.CheckAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.chkAyuda.Location = new System.Drawing.Point(12, 455);
             this.chkAyuda.CheckedChanged += new System.EventHandler(this.chkAyuda_CheckedChanged);
             // 
-            // btnVerMasEstadisticas
+            // btnAltaviaje
             // 
-            this.btnVerMasEstadisticas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVerMasEstadisticas.Location = new System.Drawing.Point(1178, 470);
-            this.btnVerMasEstadisticas.MaximumSize = new System.Drawing.Size(144, 42);
-            this.btnVerMasEstadisticas.MinimumSize = new System.Drawing.Size(144, 42);
-            this.btnVerMasEstadisticas.Name = "btnVerMasEstadisticas";
-            this.btnVerMasEstadisticas.Size = new System.Drawing.Size(144, 42);
-            this.btnVerMasEstadisticas.TabIndex = 15;
-            this.btnVerMasEstadisticas.Text = "Ver más estadísticas";
-            this.btnVerMasEstadisticas.UseVisualStyleBackColor = true;
-            this.btnVerMasEstadisticas.Click += new System.EventHandler(this.btnVerMasEstadisticas_Click);
+            this.btnAltaviaje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAltaviaje.Location = new System.Drawing.Point(804, 437);
+            this.btnAltaviaje.Name = "btnAltaviaje";
+            this.btnAltaviaje.Size = new System.Drawing.Size(134, 38);
+            this.btnAltaviaje.TabIndex = 15;
+            this.btnAltaviaje.Text = "Agregar Viaje";
+            this.btnAltaviaje.UseVisualStyleBackColor = true;
+            this.btnAltaviaje.Click += new System.EventHandler(this.btnAltaviaje_Click);
             // 
-            // FrmEstadisticas
+            // FrmViajesAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 524);
-            this.Controls.Add(this.btnVerMasEstadisticas);
-            this.Name = "FrmEstadisticas";
-            this.Text = "FrmEstadisticas";
-            this.Load += new System.EventHandler(this.FrmEstadisticas_Load);
+            this.ClientSize = new System.Drawing.Size(950, 486);
+            this.Controls.Add(this.btnAltaviaje);
+            this.Name = "FrmViajesAgregar";
+            this.Text = "FrmViajesAltaViaje";
             this.Controls.SetChildIndex(this.chkAyuda, 0);
-            this.Controls.SetChildIndex(this.btnVerMasEstadisticas, 0);
+            this.Controls.SetChildIndex(this.btnAltaviaje, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -69,6 +66,6 @@ namespace RelaxoSA
 
         #endregion
 
-        private System.Windows.Forms.Button btnVerMasEstadisticas;
+        private System.Windows.Forms.Button btnAltaviaje;
     }
 }

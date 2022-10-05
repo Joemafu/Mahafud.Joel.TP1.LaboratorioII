@@ -25,8 +25,8 @@ namespace Entidades
             Hardcodeo.InicializarOperariosHardcodeados();
             Hardcodeo.InicializarCrucerosHardcodeados();
             Hardcodeo.InicializarPasajerosHardcodeados();
-            Hardcodeo.InicializarViajesHardcodeados();
             Hardcodeo.InicializarViajesHistoricosHardcodeados();
+            Hardcodeo.InicializarViajesHardcodeados();
         }
 
         public static List<Operario> ListaOperarios 

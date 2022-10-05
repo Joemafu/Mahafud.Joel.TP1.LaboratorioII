@@ -46,8 +46,8 @@ namespace Entidades
             this.fechaPartida = fechaPartida;
             this.crucero = crucero;
             this.destino = destino;
-            
-            if (((int)this.destino)<10)
+
+            if (((int)this.destino) < 10)
             {
                 this.esRegional = true;
                 this.duracionEnHs = random.Next(72, 361);
@@ -80,7 +80,7 @@ namespace Entidades
             //set { }
         }
 
-        public DateTime FechaRegreso {  get  {  return this.fechaRegreso;  }
+        public DateTime FechaRegreso { get { return this.fechaRegreso; }
             //set { }
         }
 
@@ -140,25 +140,25 @@ namespace Entidades
             //set { }
         }
 
-        public static Viaje operator+(Viaje viaje, Pasajero pasajero)
+        public static Viaje operator +(Viaje viaje, Pasajero pasajero)
         {
             bool esPremium = pasajero.EsPremium;
             int kgsDespacho = pasajero.GetDespachadoEnKgs;
-            
-            if((esPremium && viaje.CamarotesPremiumDisponibles > 0 || !esPremium && viaje.CamarotesTuristaDisponibles > 0) && kgsDespacho<viaje.DisponibilidadBodegaKgs && viaje!=pasajero)
+
+            if ((esPremium && viaje.CamarotesPremiumDisponibles > 0 || !esPremium && viaje.CamarotesTuristaDisponibles > 0) && kgsDespacho < viaje.DisponibilidadBodegaKgs && viaje != pasajero)
             {
                 viaje.pasajeros.Add(pasajero);
             }
             return viaje;
         }
 
-        public static bool operator == (Viaje viaje, Pasajero pasajero)
+        public static bool operator ==(Viaje viaje, Pasajero pasajero)
         {
             bool ret = false;
 
-            foreach(Pasajero p in viaje.Pasajeros)
+            foreach (Pasajero p in viaje.Pasajeros)
             {
-                if (pasajero.Dni==p.Dni)
+                if (pasajero.Dni == p.Dni)
                 {
                     ret = true;
                     break;
@@ -175,7 +175,7 @@ namespace Entidades
 
         public override bool Equals(object obj)
         {
-            bool ret=false;
+            bool ret = false;
             if (obj is not null && obj is Viaje)
             {
                 ret = this == obj;
@@ -188,12 +188,11 @@ namespace Entidades
             return base.GetHashCode();
         }
 
-
-        private string FormatearDestino()
+        public static string FormatearDestino(EDestino destino)
         {
             string ret;
 
-            switch ((int)this.destino)
+            switch ((int)destino)
             {
                 case 5:
                     {
@@ -227,11 +226,16 @@ namespace Entidades
                     }
                 default:
                     {
-                        ret = this.destino.ToString();
+                        ret = destino.ToString();
                         break;
                     }
             }
             return ret;
+        }
+
+        private string FormatearDestino()
+        {
+            return Viaje.FormatearDestino(this.destino);
         }
 
         private int ActualizarDisponibilidadPasajeros(bool esPremium, int capacidadMaxima)
@@ -353,5 +357,50 @@ namespace Entidades
 
             return listaPasajerosFrecuentes;
         }
+
+        public static List<KeyValuePair<string, int>> CalcularCrucerosConMasHorasViajadas()
+        {
+            Dictionary<string, int> crucerosConMasHorasViajadas = new Dictionary<string, int>();
+            List<KeyValuePair<string, int>> listaCrucerosConHorasViaajadas = new List<KeyValuePair<string, int>>();
+
+            foreach (Viaje v in Hardcodeo.ListaViajesHistoricos)
+            {
+                if (!crucerosConMasHorasViajadas.ContainsKey(v.Crucero.Nombre))
+                {
+                    crucerosConMasHorasViajadas.Add(v.Crucero.Nombre, v.DuracionEnHs);
+                }
+                else
+                {
+                    crucerosConMasHorasViajadas[v.Crucero.Nombre] += v.DuracionEnHs;
+                }
+            }
+
+            listaCrucerosConHorasViaajadas = crucerosConMasHorasViajadas.ToList();
+
+            return listaCrucerosConHorasViaajadas;
+        }
+
+        public static List<KeyValuePair<int, int>> CalcularDestinoMasVendido()
+        {
+            Dictionary<int, int> destinoYPasajesVendidos = new Dictionary<int, int>();
+            List<KeyValuePair<int, int>> listaDestinoYPasajesVendidos = new List<KeyValuePair<int, int>>();
+
+            foreach (Viaje v in Hardcodeo.ListaViajesHistoricos)
+            {
+
+                if (!destinoYPasajesVendidos.ContainsKey((int)v.EDestino))
+                {
+                    destinoYPasajesVendidos.Add((int)v.EDestino, v.Pasajeros.Count);
+                }
+                else
+                {
+                    destinoYPasajesVendidos[(int)v.EDestino] += v.Pasajeros.Count;
+                }
+            }
+
+            listaDestinoYPasajesVendidos = destinoYPasajesVendidos.ToList();
+
+            return listaDestinoYPasajesVendidos;
+        }        
     }
 }

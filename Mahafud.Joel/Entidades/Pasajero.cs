@@ -40,10 +40,37 @@ namespace Entidades
 
             this.equipaje["deMano"] = equipajeDeMano;
             this.equipaje["despachado"] = equipajeDespachado;
+
+            string auxNumCamarote = "P" + Pasajero.numAsignacíonCamarotePremium.ToString("00");
+
+            if (esPremium)
+            {
+                Pasajero.numAsignacíonCamarotePremium++;
+            }
+            else
+            {
+                auxNumCamarote = "T" + Pasajero.numAsignacíonCamaroteTurista.ToString("00");
+                Pasajero.numAsignacíonCamaroteTurista++;
+            }
+
+            this.numeroDeCamarote = auxNumCamarote;
         }
 
-        //Constructor sólo para Hardcodeo, Randomiza equipajes
-        internal Pasajero(bool esHardcodeado,  string nombre, string apellido, string dni, DateTime fechaDeNacimiento, Pasaporte pasaporte, bool esPremium) : this(nombre, apellido, dni,fechaDeNacimiento,pasaporte,esPremium,0,0)
+        public Pasajero(string nombre, string apellido, string dni, DateTime fechaDeNacimiento, Pasaporte pasaporte, bool esPremium, int equipajeDeMano, int equipajeDespachado,string numeroDeCamarote) : this(nombre, apellido, dni,fechaDeNacimiento,pasaporte,esPremium,equipajeDeMano,equipajeDespachado)
+        {
+            this.numeroDeCamarote = numeroDeCamarote;
+            if(esPremium)
+            {
+                numAsignacíonCamarotePremium--;
+            }
+            else
+            {
+                numAsignacíonCamaroteTurista--;
+            }
+        }
+
+            //Constructor sólo para Hardcodeo, Randomiza equipajes
+            internal Pasajero(bool esHardcodeado,  string nombre, string apellido, string dni, DateTime fechaDeNacimiento, Pasaporte pasaporte, bool esPremium) : this(nombre, apellido, dni,fechaDeNacimiento,pasaporte,esPremium,0,0)
         {
             Random random = new Random();
             this.edad = Pasajero.CalcularEdad(fechaDeNacimiento);

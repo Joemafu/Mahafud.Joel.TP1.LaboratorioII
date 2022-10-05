@@ -118,6 +118,8 @@ namespace RelaxoSA
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUser);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(264, 305);
+            this.MinimumSize = new System.Drawing.Size(264, 305);
             this.Name = "FrmIniciarSesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";

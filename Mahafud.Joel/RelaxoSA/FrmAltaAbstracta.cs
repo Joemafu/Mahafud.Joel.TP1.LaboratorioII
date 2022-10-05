@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RelaxoSA
 {
-    internal partial class FrmAltaModificacionAbs : FrmBase
+    internal partial class FrmAltaAbstracta : FrmBase
     {
-        internal FrmAltaModificacionAbs()
+        internal FrmAltaAbstracta()
         {
             InitializeComponent();
         }
@@ -22,6 +22,14 @@ namespace RelaxoSA
             this.chkAyuda.Text = "";
         }
 
+        private void FrmAltaModificacionAbs_Load(object sender, EventArgs e)
+        {
 
+        }
+
+        private void FrmAltaModificacionAbs_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }    
 }

@@ -13,11 +13,6 @@ namespace RelaxoSA
 {
     internal partial class FrmPasajerosCompleto : FrmPasajerosBase
     {
-        /*internal FrmPasajerosCompleto():base()
-        {
-            InitializeComponent();
-        }*/
-
         public FrmPasajerosCompleto(List<Viaje> viajes):base(viajes)
         {
             InitializeComponent();

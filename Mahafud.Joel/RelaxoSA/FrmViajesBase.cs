@@ -55,8 +55,6 @@ namespace RelaxoSA
                     v.Pasajeros.Count,
                     v.DisponibilidadBodegaKgs);
             }
-        }
-
-        
+        }        
     }
 }

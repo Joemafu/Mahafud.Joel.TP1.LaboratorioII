@@ -56,29 +56,30 @@ namespace RelaxoSA
             this.lblTotalPrecio = new System.Windows.Forms.Label();
             this.lblClase = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
-            this.lblPrecioPasaje = new System.Windows.Forms.Label();
+            this.lblPasajeBruto = new System.Windows.Forms.Label();
             this.lblTasasAdicionales = new System.Windows.Forms.Label();
             this.lblIva = new System.Windows.Forms.Label();
             this.lblPrecioBase = new System.Windows.Forms.Label();
             this.lblIvaPrecio = new System.Windows.Forms.Label();
             this.lblTasasAdicionalesPrecio = new System.Windows.Forms.Label();
+            this.lblCantidadPasajeros = new System.Windows.Forms.Label();
+            this.cmbCantidadDePasajeros = new System.Windows.Forms.ComboBox();
             this.gbxEquipajeDespachable.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAceptar
             // 
             this.btnAceptar.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAceptar.Location = new System.Drawing.Point(75, 512);
+            this.btnAceptar.Location = new System.Drawing.Point(75, 568);
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(219, 512);
+            this.btnCancelar.Location = new System.Drawing.Point(219, 568);
             // 
             // chkAyuda
             // 
-            this.chkAyuda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.chkAyuda.Location = new System.Drawing.Point(3, 538);
+            this.chkAyuda.Location = new System.Drawing.Point(3, 594);
             this.chkAyuda.CheckedChanged += new System.EventHandler(this.chkAyuda_CheckedChanged);
             // 
             // lblNombre
@@ -237,12 +238,12 @@ namespace RelaxoSA
             this.gbxEquipajeDespachable.Controls.Add(this.rbtnDosDespachos);
             this.gbxEquipajeDespachable.Controls.Add(this.rbtnUnDespacho);
             this.gbxEquipajeDespachable.Controls.Add(this.rbtnCeroDespachos);
-            this.gbxEquipajeDespachable.Location = new System.Drawing.Point(12, 336);
+            this.gbxEquipajeDespachable.Location = new System.Drawing.Point(12, 338);
             this.gbxEquipajeDespachable.Name = "gbxEquipajeDespachable";
             this.gbxEquipajeDespachable.Size = new System.Drawing.Size(347, 57);
             this.gbxEquipajeDespachable.TabIndex = 26;
             this.gbxEquipajeDespachable.TabStop = false;
-            this.gbxEquipajeDespachable.Text = "Equipajes adicionales";
+            this.gbxEquipajeDespachable.Text = "Equipajes adicionales:";
             // 
             // datepFechaNacimiento
             // 
@@ -496,7 +497,7 @@ namespace RelaxoSA
             this.lblTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblTotal.Location = new System.Drawing.Point(12, 472);
+            this.lblTotal.Location = new System.Drawing.Point(12, 528);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(68, 28);
             this.lblTotal.TabIndex = 31;
@@ -507,7 +508,7 @@ namespace RelaxoSA
             this.lblTotalPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotalPrecio.AutoSize = true;
             this.lblTotalPrecio.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.lblTotalPrecio.Location = new System.Drawing.Point(219, 472);
+            this.lblTotalPrecio.Location = new System.Drawing.Point(219, 528);
             this.lblTotalPrecio.Name = "lblTotalPrecio";
             this.lblTotalPrecio.Size = new System.Drawing.Size(23, 28);
             this.lblTotalPrecio.TabIndex = 32;
@@ -533,41 +534,41 @@ namespace RelaxoSA
             this.lblId.TabIndex = 34;
             this.lblId.Text = "ID ####";
             // 
-            // lblPrecioPasaje
+            // lblPasajeBruto
             // 
-            this.lblPrecioPasaje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblPrecioPasaje.AutoSize = true;
-            this.lblPrecioPasaje.Location = new System.Drawing.Point(12, 400);
-            this.lblPrecioPasaje.Name = "lblPrecioPasaje";
-            this.lblPrecioPasaje.Size = new System.Drawing.Size(76, 15);
-            this.lblPrecioPasaje.TabIndex = 35;
-            this.lblPrecioPasaje.Text = "Precio pasaje";
+            this.lblPasajeBruto.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblPasajeBruto.AutoSize = true;
+            this.lblPasajeBruto.Location = new System.Drawing.Point(12, 456);
+            this.lblPasajeBruto.Name = "lblPasajeBruto";
+            this.lblPasajeBruto.Size = new System.Drawing.Size(79, 15);
+            this.lblPasajeBruto.TabIndex = 35;
+            this.lblPasajeBruto.Text = "Precio pasaje:";
             // 
             // lblTasasAdicionales
             // 
             this.lblTasasAdicionales.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTasasAdicionales.AutoSize = true;
-            this.lblTasasAdicionales.Location = new System.Drawing.Point(12, 449);
+            this.lblTasasAdicionales.Location = new System.Drawing.Point(12, 505);
             this.lblTasasAdicionales.Name = "lblTasasAdicionales";
-            this.lblTasasAdicionales.Size = new System.Drawing.Size(132, 15);
+            this.lblTasasAdicionales.Size = new System.Drawing.Size(135, 15);
             this.lblTasasAdicionales.TabIndex = 36;
-            this.lblTasasAdicionales.Text = "Otros impuestos y tasas";
+            this.lblTasasAdicionales.Text = "Otros impuestos y tasas:";
             // 
             // lblIva
             // 
             this.lblIva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblIva.AutoSize = true;
-            this.lblIva.Location = new System.Drawing.Point(12, 424);
+            this.lblIva.Location = new System.Drawing.Point(12, 480);
             this.lblIva.Name = "lblIva";
-            this.lblIva.Size = new System.Drawing.Size(34, 15);
+            this.lblIva.Size = new System.Drawing.Size(37, 15);
             this.lblIva.TabIndex = 37;
-            this.lblIva.Text = "I.V.A.";
+            this.lblIva.Text = "I.V.A.:";
             // 
             // lblPrecioBase
             // 
             this.lblPrecioBase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblPrecioBase.AutoSize = true;
-            this.lblPrecioBase.Location = new System.Drawing.Point(257, 400);
+            this.lblPrecioBase.Location = new System.Drawing.Point(257, 456);
             this.lblPrecioBase.Name = "lblPrecioBase";
             this.lblPrecioBase.Size = new System.Drawing.Size(13, 15);
             this.lblPrecioBase.TabIndex = 35;
@@ -577,7 +578,7 @@ namespace RelaxoSA
             // 
             this.lblIvaPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblIvaPrecio.AutoSize = true;
-            this.lblIvaPrecio.Location = new System.Drawing.Point(257, 424);
+            this.lblIvaPrecio.Location = new System.Drawing.Point(257, 480);
             this.lblIvaPrecio.Name = "lblIvaPrecio";
             this.lblIvaPrecio.Size = new System.Drawing.Size(13, 15);
             this.lblIvaPrecio.TabIndex = 36;
@@ -587,25 +588,50 @@ namespace RelaxoSA
             // 
             this.lblTasasAdicionalesPrecio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblTasasAdicionalesPrecio.AutoSize = true;
-            this.lblTasasAdicionalesPrecio.Location = new System.Drawing.Point(257, 449);
+            this.lblTasasAdicionalesPrecio.Location = new System.Drawing.Point(257, 505);
             this.lblTasasAdicionalesPrecio.Name = "lblTasasAdicionalesPrecio";
             this.lblTasasAdicionalesPrecio.Size = new System.Drawing.Size(13, 15);
             this.lblTasasAdicionalesPrecio.TabIndex = 37;
             this.lblTasasAdicionalesPrecio.Text = "$";
             // 
+            // lblCantidadPasajeros
+            // 
+            this.lblCantidadPasajeros.AutoSize = true;
+            this.lblCantidadPasajeros.Location = new System.Drawing.Point(12, 410);
+            this.lblCantidadPasajeros.Name = "lblCantidadPasajeros";
+            this.lblCantidadPasajeros.Size = new System.Drawing.Size(110, 15);
+            this.lblCantidadPasajeros.TabIndex = 38;
+            this.lblCantidadPasajeros.Text = "Cantidad pasajeros:";
+            // 
+            // cmbCantidadDePasajeros
+            // 
+            this.cmbCantidadDePasajeros.DisplayMember = "1 pasajero";
+            this.cmbCantidadDePasajeros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCantidadDePasajeros.FormattingEnabled = true;
+            this.cmbCantidadDePasajeros.Items.AddRange(new object[] {
+            "1 pasajero",
+            "2 pasajeros",
+            "3 pasajeros",
+            "4 pasajeros "});
+            this.cmbCantidadDePasajeros.Location = new System.Drawing.Point(196, 407);
+            this.cmbCantidadDePasajeros.Name = "cmbCantidadDePasajeros";
+            this.cmbCantidadDePasajeros.Size = new System.Drawing.Size(163, 23);
+            this.cmbCantidadDePasajeros.TabIndex = 40;
+            this.cmbCantidadDePasajeros.SelectedIndexChanged += new System.EventHandler(this.cmbCantidadDePasajeros_SelectedIndexChanged);
+            // 
             // FrmAltaPasajero
             // 
-            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnCancelar;
-            this.ClientSize = new System.Drawing.Size(371, 557);
+            this.ClientSize = new System.Drawing.Size(371, 613);
+            this.Controls.Add(this.cmbCantidadDePasajeros);
+            this.Controls.Add(this.lblCantidadPasajeros);
             this.Controls.Add(this.lblTasasAdicionalesPrecio);
             this.Controls.Add(this.lblIvaPrecio);
             this.Controls.Add(this.lblIva);
             this.Controls.Add(this.lblPrecioBase);
             this.Controls.Add(this.lblTasasAdicionales);
-            this.Controls.Add(this.lblPrecioPasaje);
+            this.Controls.Add(this.lblPasajeBruto);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.chkbxEquipajeDeMano);
             this.Controls.Add(this.lblClase);
@@ -630,12 +656,10 @@ namespace RelaxoSA
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.gbxEquipajeDespachable);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(387, 596);
-            this.MinimumSize = new System.Drawing.Size(387, 596);
+            this.MaximumSize = new System.Drawing.Size(387, 652);
+            this.MinimumSize = new System.Drawing.Size(387, 652);
             this.Name = "FrmAltaPasajero";
             this.Text = "Vender Pasaje";
-            this.Load += new System.EventHandler(this.FrmAltaPasajero_Load);
             this.Controls.SetChildIndex(this.chkAyuda, 0);
             this.Controls.SetChildIndex(this.btnAceptar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
@@ -663,12 +687,14 @@ namespace RelaxoSA
             this.Controls.SetChildIndex(this.lblClase, 0);
             this.Controls.SetChildIndex(this.chkbxEquipajeDeMano, 0);
             this.Controls.SetChildIndex(this.lblId, 0);
-            this.Controls.SetChildIndex(this.lblPrecioPasaje, 0);
+            this.Controls.SetChildIndex(this.lblPasajeBruto, 0);
             this.Controls.SetChildIndex(this.lblTasasAdicionales, 0);
             this.Controls.SetChildIndex(this.lblPrecioBase, 0);
             this.Controls.SetChildIndex(this.lblIva, 0);
             this.Controls.SetChildIndex(this.lblIvaPrecio, 0);
             this.Controls.SetChildIndex(this.lblTasasAdicionalesPrecio, 0);
+            this.Controls.SetChildIndex(this.lblCantidadPasajeros, 0);
+            this.Controls.SetChildIndex(this.cmbCantidadDePasajeros, 0);
             this.gbxEquipajeDespachable.ResumeLayout(false);
             this.gbxEquipajeDespachable.PerformLayout();
             this.ResumeLayout(false);
@@ -705,11 +731,13 @@ namespace RelaxoSA
         private System.Windows.Forms.Label lblTotalPrecio;
         private System.Windows.Forms.Label lblClase;
         private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Label lblPrecioPasaje;
+        private System.Windows.Forms.Label lblPasajeBruto;
         private System.Windows.Forms.Label lblTasasAdicionales;
         private System.Windows.Forms.Label lblIva;
         private System.Windows.Forms.Label lblPrecioBase;
         private System.Windows.Forms.Label lblIvaPrecio;
         private System.Windows.Forms.Label lblTasasAdicionalesPrecio;
+        private System.Windows.Forms.Label lblCantidadPasajeros;
+        private System.Windows.Forms.ComboBox cmbCantidadDePasajeros;
     }
 }

@@ -143,5 +143,23 @@ namespace Entidades
             return crucero.ToString();
         }*/
 
+        public bool EstaLibre(DateTime fecha)
+        {
+            bool ret = true;
+            foreach(Viaje v in Hardcodeo.ListaViajesActuales)
+            {
+                if(v.Crucero.Matricula==this.Matricula)
+                {
+                    if (v.FechaPartida<=fecha && v.FechaRegreso>=fecha)
+                    {
+                        ret = false;
+                        break;
+                    }
+                }
+            }
+
+            return ret;
+        }
+
     }
 }

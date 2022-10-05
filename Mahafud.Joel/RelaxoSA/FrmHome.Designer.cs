@@ -35,30 +35,31 @@ namespace RelaxoSA
             this.btnEstadisticas = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.lblBienvenido = new System.Windows.Forms.Label();
+            this.btnAgregarViaje = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // chkAyuda
             // 
             this.chkAyuda.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.chkAyuda.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chkAyuda.Location = new System.Drawing.Point(12, 60);
+            this.chkAyuda.Location = new System.Drawing.Point(12, 65);
             this.chkAyuda.CheckedChanged += new System.EventHandler(this.chkAyuda_CheckedChanged);
             // 
             // btnViajes
             // 
             this.btnViajes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnViajes.Location = new System.Drawing.Point(12, 260);
+            this.btnViajes.Location = new System.Drawing.Point(12, 270);
             this.btnViajes.Name = "btnViajes";
             this.btnViajes.Size = new System.Drawing.Size(188, 53);
             this.btnViajes.TabIndex = 1;
-            this.btnViajes.Text = "Vender Viajes";
+            this.btnViajes.Text = "Vender Pasajes";
             this.btnViajes.UseVisualStyleBackColor = true;
             this.btnViajes.Click += new System.EventHandler(this.btnViajes_Click);
             // 
             // btnPasajeros
             // 
             this.btnPasajeros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnPasajeros.Location = new System.Drawing.Point(206, 260);
+            this.btnPasajeros.Location = new System.Drawing.Point(400, 270);
             this.btnPasajeros.Name = "btnPasajeros";
             this.btnPasajeros.Size = new System.Drawing.Size(188, 53);
             this.btnPasajeros.TabIndex = 2;
@@ -69,7 +70,7 @@ namespace RelaxoSA
             // btnCruceros
             // 
             this.btnCruceros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCruceros.Location = new System.Drawing.Point(400, 260);
+            this.btnCruceros.Location = new System.Drawing.Point(594, 270);
             this.btnCruceros.Name = "btnCruceros";
             this.btnCruceros.Size = new System.Drawing.Size(188, 53);
             this.btnCruceros.TabIndex = 3;
@@ -80,7 +81,7 @@ namespace RelaxoSA
             // btnEstadisticas
             // 
             this.btnEstadisticas.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEstadisticas.Location = new System.Drawing.Point(594, 260);
+            this.btnEstadisticas.Location = new System.Drawing.Point(788, 270);
             this.btnEstadisticas.Name = "btnEstadisticas";
             this.btnEstadisticas.Size = new System.Drawing.Size(188, 53);
             this.btnEstadisticas.TabIndex = 4;
@@ -91,7 +92,7 @@ namespace RelaxoSA
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(594, 12);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(788, 12);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(188, 53);
             this.btnCerrarSesion.TabIndex = 6;
@@ -109,19 +110,31 @@ namespace RelaxoSA
             this.lblBienvenido.TabIndex = 31;
             this.lblBienvenido.Text = "Bienvenido Nombre del Usuario! Hoy es XX/XX/XXXX";
             // 
+            // btnAgregarViaje
+            // 
+            this.btnAgregarViaje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAgregarViaje.Location = new System.Drawing.Point(206, 270);
+            this.btnAgregarViaje.Name = "btnAgregarViaje";
+            this.btnAgregarViaje.Size = new System.Drawing.Size(188, 53);
+            this.btnAgregarViaje.TabIndex = 32;
+            this.btnAgregarViaje.Text = "Agregar Viaje";
+            this.btnAgregarViaje.UseVisualStyleBackColor = true;
+            this.btnAgregarViaje.Click += new System.EventHandler(this.btnAgregarViaje_Click);
+            // 
             // FrmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(794, 325);
+            this.ClientSize = new System.Drawing.Size(988, 335);
+            this.Controls.Add(this.btnAgregarViaje);
             this.Controls.Add(this.lblBienvenido);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnEstadisticas);
             this.Controls.Add(this.btnCruceros);
             this.Controls.Add(this.btnPasajeros);
             this.Controls.Add(this.btnViajes);
-            this.MinimumSize = new System.Drawing.Size(810, 364);
+            this.MinimumSize = new System.Drawing.Size(1004, 374);
             this.Name = "FrmHome";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cruceros Relaxo S.A.";
@@ -134,6 +147,7 @@ namespace RelaxoSA
             this.Controls.SetChildIndex(this.btnCerrarSesion, 0);
             this.Controls.SetChildIndex(this.lblBienvenido, 0);
             this.Controls.SetChildIndex(this.chkAyuda, 0);
+            this.Controls.SetChildIndex(this.btnAgregarViaje, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,6 +160,7 @@ namespace RelaxoSA
         protected internal System.Windows.Forms.Button btnCerrarSesion;
         internal System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.Label lblBienvenido;
+        protected internal System.Windows.Forms.Button btnAgregarViaje;
     }
 }
 

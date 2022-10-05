@@ -60,17 +60,15 @@ namespace RelaxoSA
             this.CargarDestinosMasFacturados();
             this.CargarPasajerosMasFrecuentes();
             this.CargarServicioMasFacturado();
-            this.CargarCrucerosConMasHorasViaje();
+            this.CargarCrucerosConMasHorasViajadas();
             this.CargarDestinosMasVendidos();
         }
 
         private void CargarDestinosMasFacturados()
         {
-            
             List<KeyValuePair<int, double>> listaDestinoYFacturacion = Viaje.CalcularDestinosMasFacturados();
 
             listaDestinoYFacturacion.Sort(Comparacion);
-
 
             foreach (KeyValuePair<int, double> item in listaDestinoYFacturacion)
             {
@@ -81,11 +79,17 @@ namespace RelaxoSA
         private void CargarPasajerosMasFrecuentes()
         {
             List<KeyValuePair<string, int>> listaPasajerosFrecuentes = Viaje.CalcularPasajerosMasFrecuentes();
+            int contador = 0;
+            int cantidadPasajesUltimoPasajeroFrecuente=-1;
 
             listaPasajerosFrecuentes.Sort(Comparacion);
 
             foreach (KeyValuePair<string, int> item in listaPasajerosFrecuentes)
             {
+                if (contador == 15 && item.Value != cantidadPasajesUltimoPasajeroFrecuente)//Imprimo solo el top 15, a menos que haya empate, me traigo a todos los empatados
+                {
+                    break;
+                }
                 foreach(Viaje v in Hardcodeo.ListaViajesHistoricos)
                 {
                     foreach (Pasajero p in v.Pasajeros)
@@ -93,6 +97,9 @@ namespace RelaxoSA
                         if (item.Key==p.Dni)
                         {
                             this.dgvPasajerosFrecuentes.Rows.Add(p.Nombre, p.Apellido, p.Dni, item.Value);
+                            cantidadPasajesUltimoPasajeroFrecuente = item.Value;
+                            contador++;
+
                             break;
                         }
                     }
@@ -105,7 +112,7 @@ namespace RelaxoSA
         {
             double ventasPasajeRegional = 0;
             double ventasPasajeExtraRegional = 0;
-            List<KeyValuePair<int, double>> listaDestinoYFacturacion = Viaje.CalcularDestinosMasFacturados();
+            List<KeyValuePair<int, double>> listaDestinoYFacturacion = Viaje.CalcularDestinosMasFacturados(); //Reutilizo el método y adapto el resultado
 
             foreach (KeyValuePair<int, double> item in listaDestinoYFacturacion)
             {
@@ -121,27 +128,57 @@ namespace RelaxoSA
 
             if (ventasPasajeRegional > ventasPasajeExtraRegional)
             {
-                this.dgvServicioMasSolicitado.Rows.Add("Regional", ventasPasajeRegional);
-                this.dgvServicioMasSolicitado.Rows.Add("Extra-Regional", ventasPasajeExtraRegional);
+                this.dgvServicioMasSolicitado.Rows.Add("Regional", ventasPasajeRegional.ToString("N2"));
+                this.dgvServicioMasSolicitado.Rows.Add("Extra-Regional", ventasPasajeExtraRegional.ToString("N2"));
             }
             else
             {
-                this.dgvServicioMasSolicitado.Rows.Add("Extra-Regional", ventasPasajeExtraRegional);
-                this.dgvServicioMasSolicitado.Rows.Add("Regional", ventasPasajeRegional);
+                this.dgvServicioMasSolicitado.Rows.Add("Extra-Regional", ventasPasajeExtraRegional.ToString("N2"));
+                this.dgvServicioMasSolicitado.Rows.Add("Regional", ventasPasajeRegional.ToString("N2"));
             }
         }
 
-        private void CargarCrucerosConMasHorasViaje()
+        private void CargarCrucerosConMasHorasViajadas()
         {
+            List<KeyValuePair<string, int>> listaCrucerosConHorasViaajadas = Viaje.CalcularCrucerosConMasHorasViajadas();
 
+            listaCrucerosConHorasViaajadas.Sort(Comparacion);
+
+            foreach (KeyValuePair<string, int> item in listaCrucerosConHorasViaajadas)
+            {
+                this.dgvCrucerosConMasHorasViajadas.Rows.Add(item.Key,item.Value);
+            }
         }
 
         private void CargarDestinosMasVendidos()
         {
+            List <KeyValuePair<int, int>> listaDestinoYPasajesVendidos = Viaje.CalcularDestinoMasVendido();
 
+            listaDestinoYPasajesVendidos.Sort(Comparacion);
+
+            foreach (KeyValuePair<int, int> item in listaDestinoYPasajesVendidos)
+            {
+                this.dgvDestinosMasPedidos.Rows.Add((EDestino)item.Key, item.Value);
+            }
         }
 
         public int Comparacion(KeyValuePair<int, double> kV1, KeyValuePair<int, double> kV2)
+        {
+            int ret = 1;
+
+            if ((double)kV1.Value == (double)kV2.Value)
+            {
+                ret = 0;
+            }
+            else if ((double)kV1.Value > (double)kV2.Value)
+            {
+                ret = -1;
+            }
+
+            return ret;
+        }
+
+        public int Comparacion(KeyValuePair<int, int> kV1, KeyValuePair<int, int> kV2)
         {
             int ret = 1;
 
