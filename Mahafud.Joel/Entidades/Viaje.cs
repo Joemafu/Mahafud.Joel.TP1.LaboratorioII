@@ -20,7 +20,7 @@ namespace Entidades
         private int cantidadCamarotesTurista;
 
         private EDestino destino;
-        private bool regional;
+        private bool esRegional;
         private double tarifaPremium;
         private double tarifaTurista;
         private int duracionEnHs;
@@ -49,14 +49,14 @@ namespace Entidades
             
             if (((int)this.destino)<10)
             {
-                this.regional = true;
+                this.esRegional = true;
                 this.duracionEnHs = random.Next(72, 361);
                 this.tarifaTurista = this.duracionEnHs * 57;
                 this.tarifaPremium = Math.Round(this.tarifaTurista * 1.2, 2);
             }
             else
             {
-                this.regional = false;
+                this.esRegional = false;
                 this.duracionEnHs = random.Next(480, 720);
                 this.tarifaTurista = this.duracionEnHs * 120;
                 this.tarifaPremium = Math.Round(this.tarifaTurista * 1.2, 2);
@@ -65,7 +65,14 @@ namespace Entidades
             this.fechaRegreso = this.fechaPartida.AddHours(this.duracionEnHs);
         }
 
-        public int Id { get { return this.id; }
+        public int Id
+        {
+            get { return this.id; }
+            //set { }
+        }
+        public bool EsRegional
+        {
+            get { return this.esRegional; }
             //set { }
         }
 
@@ -319,6 +326,32 @@ namespace Entidades
             listaDestinoYFacturacion = destinoYRecaudacion.ToList();
 
             return  listaDestinoYFacturacion;
+        }
+
+        public static List<KeyValuePair<string, int>> CalcularPasajerosMasFrecuentes()
+        {
+            Dictionary<string, int> pasajerosFrecuentes = new Dictionary<string, int>();
+
+            List<KeyValuePair<string, int>> listaPasajerosFrecuentes = new List<KeyValuePair<string, int>>();
+
+            foreach (Viaje v in Hardcodeo.ListaViajesHistoricos)
+            {
+                foreach (Pasajero p in v.Pasajeros)
+                {
+                    if (!pasajerosFrecuentes.ContainsKey(p.Dni))
+                    {
+                        pasajerosFrecuentes.Add(p.Dni, 1);
+                    }
+                    else
+                    {
+                        pasajerosFrecuentes[p.Dni]++;
+                    }
+                }
+            }
+
+            listaPasajerosFrecuentes = pasajerosFrecuentes.ToList();
+
+            return listaPasajerosFrecuentes;
         }
     }
 }

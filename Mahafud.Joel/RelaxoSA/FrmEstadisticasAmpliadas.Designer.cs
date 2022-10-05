@@ -35,13 +35,13 @@ namespace RelaxoSA
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvDestinoYFacturacion = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvPasajerosFrecuentes = new System.Windows.Forms.DataGridView();
             this.cNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cDni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cCantidadDeViajesConLaEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dgvServicioMasSolicitado = new System.Windows.Forms.DataGridView();
             this.cServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cFacturacionTotalServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -58,9 +58,9 @@ namespace RelaxoSA
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinoYFacturacion)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPasajerosFrecuentes)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServicioMasSolicitado)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPage5.SuspendLayout();
@@ -128,7 +128,7 @@ namespace RelaxoSA
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.dgvPasajerosFrecuentes);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -139,30 +139,30 @@ namespace RelaxoSA
             // 
             // dataGridView2
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToOrderColumns = true;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvPasajerosFrecuentes.AllowUserToAddRows = false;
+            this.dgvPasajerosFrecuentes.AllowUserToDeleteRows = false;
+            this.dgvPasajerosFrecuentes.AllowUserToOrderColumns = true;
+            this.dgvPasajerosFrecuentes.AllowUserToResizeRows = false;
+            this.dgvPasajerosFrecuentes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPasajerosFrecuentes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvPasajerosFrecuentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvPasajerosFrecuentes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cNombre,
             this.cApellido,
             this.cDni,
             this.cCantidadDeViajesConLaEmpresa});
-            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 6);
-            this.dataGridView2.MultiSelect = false;
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.ShowEditingIcon = false;
-            this.dataGridView2.Size = new System.Drawing.Size(805, 380);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvPasajerosFrecuentes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvPasajerosFrecuentes.Location = new System.Drawing.Point(7, 6);
+            this.dgvPasajerosFrecuentes.MultiSelect = false;
+            this.dgvPasajerosFrecuentes.Name = "dataGridView2";
+            this.dgvPasajerosFrecuentes.RowHeadersVisible = false;
+            this.dgvPasajerosFrecuentes.RowTemplate.Height = 25;
+            this.dgvPasajerosFrecuentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPasajerosFrecuentes.ShowEditingIcon = false;
+            this.dgvPasajerosFrecuentes.Size = new System.Drawing.Size(805, 380);
+            this.dgvPasajerosFrecuentes.TabIndex = 1;
             // 
             // cNombre
             // 
@@ -190,7 +190,7 @@ namespace RelaxoSA
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.dataGridView3);
+            this.tabPage3.Controls.Add(this.dgvServicioMasSolicitado);
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -201,28 +201,28 @@ namespace RelaxoSA
             // 
             // dataGridView3
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToOrderColumns = true;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvServicioMasSolicitado.AllowUserToAddRows = false;
+            this.dgvServicioMasSolicitado.AllowUserToDeleteRows = false;
+            this.dgvServicioMasSolicitado.AllowUserToOrderColumns = true;
+            this.dgvServicioMasSolicitado.AllowUserToResizeRows = false;
+            this.dgvServicioMasSolicitado.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView3.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvServicioMasSolicitado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvServicioMasSolicitado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvServicioMasSolicitado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cServicio,
             this.cFacturacionTotalServicio});
-            this.dataGridView3.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView3.Location = new System.Drawing.Point(7, 6);
-            this.dataGridView3.MultiSelect = false;
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.ShowEditingIcon = false;
-            this.dataGridView3.Size = new System.Drawing.Size(805, 380);
-            this.dataGridView3.TabIndex = 1;
+            this.dgvServicioMasSolicitado.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvServicioMasSolicitado.Location = new System.Drawing.Point(7, 6);
+            this.dgvServicioMasSolicitado.MultiSelect = false;
+            this.dgvServicioMasSolicitado.Name = "dataGridView3";
+            this.dgvServicioMasSolicitado.RowHeadersVisible = false;
+            this.dgvServicioMasSolicitado.RowTemplate.Height = 25;
+            this.dgvServicioMasSolicitado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvServicioMasSolicitado.ShowEditingIcon = false;
+            this.dgvServicioMasSolicitado.Size = new System.Drawing.Size(805, 380);
+            this.dgvServicioMasSolicitado.TabIndex = 1;
             // 
             // cServicio
             // 
@@ -367,9 +367,9 @@ namespace RelaxoSA
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDestinoYFacturacion)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPasajerosFrecuentes)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvServicioMasSolicitado)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tabPage5.ResumeLayout(false);
@@ -388,12 +388,12 @@ namespace RelaxoSA
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvPasajerosFrecuentes;
         private System.Windows.Forms.DataGridViewTextBoxColumn cNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn cApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDni;
         private System.Windows.Forms.DataGridViewTextBoxColumn cCantidadDeViajesConLaEmpresa;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dgvServicioMasSolicitado;
         private System.Windows.Forms.DataGridViewTextBoxColumn cServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn cFacturacionTotalServicio;
         private System.Windows.Forms.DataGridView dataGridView4;

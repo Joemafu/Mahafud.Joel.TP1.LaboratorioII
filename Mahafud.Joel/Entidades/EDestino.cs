@@ -1,7 +1,4 @@
-﻿
-//using System.Collections.Generic;
-
-public enum EDestino 
+﻿public enum EDestino 
 {
     //Regional
     Montevideo=0,       //
@@ -25,5 +22,3 @@ public enum EDestino
     Taipei = 16,        //
     Atenas = 17         //
 }
-
-//public List<EDestino> MyProperty { get; set; }

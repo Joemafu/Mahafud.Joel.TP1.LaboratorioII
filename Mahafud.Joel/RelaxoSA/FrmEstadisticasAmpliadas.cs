@@ -58,10 +58,10 @@ namespace RelaxoSA
             this.tabPage5.Name = "DestinosPorVentas";
 
             this.CargarDestinosMasFacturados();
-            this.CargarDestinosPasajerosMasFrecuentes();
-            this.CargarDestinosServicioMasSolicitado();
-            this.CargarDestinosCrucerosConMasHorasViaje();
-            this.CargarDestinosDestinosMasVendidos();
+            this.CargarPasajerosMasFrecuentes();
+            this.CargarServicioMasFacturado();
+            this.CargarCrucerosConMasHorasViaje();
+            this.CargarDestinosMasVendidos();
         }
 
         private void CargarDestinosMasFacturados()
@@ -69,7 +69,7 @@ namespace RelaxoSA
             
             List<KeyValuePair<int, double>> listaDestinoYFacturacion = Viaje.CalcularDestinosMasFacturados();
 
-            listaDestinoYFacturacion.Sort(IntentoMetodoComparacion);
+            listaDestinoYFacturacion.Sort(Comparacion);
 
 
             foreach (KeyValuePair<int, double> item in listaDestinoYFacturacion)
@@ -78,7 +78,70 @@ namespace RelaxoSA
             }
         }
 
-        public int IntentoMetodoComparacion(KeyValuePair<int, double> kV1, KeyValuePair<int, double> kV2)
+        private void CargarPasajerosMasFrecuentes()
+        {
+            List<KeyValuePair<string, int>> listaPasajerosFrecuentes = Viaje.CalcularPasajerosMasFrecuentes();
+
+            listaPasajerosFrecuentes.Sort(Comparacion);
+
+            foreach (KeyValuePair<string, int> item in listaPasajerosFrecuentes)
+            {
+                foreach(Viaje v in Hardcodeo.ListaViajesHistoricos)
+                {
+                    foreach (Pasajero p in v.Pasajeros)
+                    {
+                        if (item.Key==p.Dni)
+                        {
+                            this.dgvPasajerosFrecuentes.Rows.Add(p.Nombre, p.Apellido, p.Dni, item.Value);
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+        
+        private void CargarServicioMasFacturado()
+        {
+            double ventasPasajeRegional = 0;
+            double ventasPasajeExtraRegional = 0;
+            List<KeyValuePair<int, double>> listaDestinoYFacturacion = Viaje.CalcularDestinosMasFacturados();
+
+            foreach (KeyValuePair<int, double> item in listaDestinoYFacturacion)
+            {
+                if (item.Key>9)
+                {
+                    ventasPasajeExtraRegional += item.Value;
+                }
+                else
+                {
+                    ventasPasajeRegional += item.Value;
+                }
+            }
+
+            if (ventasPasajeRegional > ventasPasajeExtraRegional)
+            {
+                this.dgvServicioMasSolicitado.Rows.Add("Regional", ventasPasajeRegional);
+                this.dgvServicioMasSolicitado.Rows.Add("Extra-Regional", ventasPasajeExtraRegional);
+            }
+            else
+            {
+                this.dgvServicioMasSolicitado.Rows.Add("Extra-Regional", ventasPasajeExtraRegional);
+                this.dgvServicioMasSolicitado.Rows.Add("Regional", ventasPasajeRegional);
+            }
+        }
+
+        private void CargarCrucerosConMasHorasViaje()
+        {
+
+        }
+
+        private void CargarDestinosMasVendidos()
+        {
+
+        }
+
+        public int Comparacion(KeyValuePair<int, double> kV1, KeyValuePair<int, double> kV2)
         {
             int ret = 1;
 
@@ -94,26 +157,20 @@ namespace RelaxoSA
             return ret;
         }
 
-
-
-        private void CargarDestinosPasajerosMasFrecuentes()
+        public int Comparacion(KeyValuePair<string, int> kV1, KeyValuePair<string, int> kV2)
         {
+            int ret = 1;
 
-        }
+            if ((double)kV1.Value == (double)kV2.Value)
+            {
+                ret = 0;
+            }
+            else if ((double)kV1.Value > (double)kV2.Value)
+            {
+                ret = -1;
+            }
 
-        private void CargarDestinosServicioMasSolicitado()
-        {
-
-        }
-
-        private void CargarDestinosCrucerosConMasHorasViaje()
-        {
-
-        }
-
-        private void CargarDestinosDestinosMasVendidos()
-        {
-
+            return ret;
         }
     }
 }
