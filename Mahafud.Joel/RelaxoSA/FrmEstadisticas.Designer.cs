@@ -47,6 +47,7 @@ namespace RelaxoSA
             this.btnVerMasEstadisticas.TabIndex = 15;
             this.btnVerMasEstadisticas.Text = "Ver más estadísticas";
             this.btnVerMasEstadisticas.UseVisualStyleBackColor = true;
+            this.btnVerMasEstadisticas.Click += new System.EventHandler(this.btnVerMasEstadisticas_Click);
             // 
             // FrmEstadisticas
             // 

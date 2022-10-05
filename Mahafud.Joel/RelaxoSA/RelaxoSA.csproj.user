@@ -16,6 +16,9 @@
     <Compile Update="FrmEstadisticas.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmEstadisticasAmpliadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -36,6 +39,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Update="FrmAltaModificacionAbs.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FrmAltaPasajero.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Update="FrmHome.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>

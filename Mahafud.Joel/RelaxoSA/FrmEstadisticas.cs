@@ -41,5 +41,12 @@ namespace RelaxoSA
                 this.SetearMensajeAyudaADefault();
             }
         }
+
+        private void btnVerMasEstadisticas_Click(object sender, EventArgs e)
+        {
+            FrmEstadisticasAmpliadas frmEstadisticasAmpliadas = new FrmEstadisticasAmpliadas();
+
+            frmEstadisticasAmpliadas.ShowDialog();
+        }
     }
 }

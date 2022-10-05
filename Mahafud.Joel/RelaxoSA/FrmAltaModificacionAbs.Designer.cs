@@ -33,6 +33,10 @@ namespace RelaxoSA
             this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
+            // chkAyuda
+            // 
+            this.chkAyuda.Location = new System.Drawing.Point(12, 12);
+            // 
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -65,7 +69,11 @@ namespace RelaxoSA
             this.Name = "FrmAltaModificacionAbs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAltaModificacionAbs";
+            this.Controls.SetChildIndex(this.btnAceptar, 0);
+            this.Controls.SetChildIndex(this.btnCancelar, 0);
+            this.Controls.SetChildIndex(this.chkAyuda, 0);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

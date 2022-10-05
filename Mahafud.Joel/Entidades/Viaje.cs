@@ -85,6 +85,12 @@ namespace Entidades
             //set { }
         }
 
+        public EDestino EDestino
+        {
+            get { return this.destino; }
+            //set { }
+        }
+
         public Crucero Crucero { get { return this.crucero; }
             //set { }
         }
@@ -283,6 +289,36 @@ namespace Entidades
                 }
             }
             return auxViaje;
+        }
+
+        public static List<KeyValuePair<int, double>> CalcularDestinosMasFacturados()
+        {
+            Dictionary<int, double> destinoYRecaudacion = new Dictionary<int, double>();
+            List<KeyValuePair<int, double>> listaDestinoYFacturacion = new List<KeyValuePair<int, double>>();
+
+            int premiumVendidos;
+            int turistaVendidos;
+            double recaudado;
+
+            foreach (Viaje v in Hardcodeo.ListaViajesHistoricos)
+            {
+                premiumVendidos = v.Crucero.CantidadCamarotesPremium - v.CamarotesPremiumDisponibles;
+                turistaVendidos = v.Crucero.CantidadCamarotesTurista - v.CamarotesTuristaDisponibles;
+                recaudado = premiumVendidos * v.TarifaPremium + turistaVendidos * v.TarifaTurista;
+
+                if(!destinoYRecaudacion.ContainsKey((int)v.EDestino))
+                {
+                    destinoYRecaudacion.Add((int)v.EDestino, recaudado);
+                }
+                else
+                {
+                    destinoYRecaudacion[(int)v.EDestino] += recaudado;
+                }                
+            }
+
+            listaDestinoYFacturacion = destinoYRecaudacion.ToList();
+
+            return  listaDestinoYFacturacion;
         }
     }
 }

@@ -134,6 +134,10 @@ namespace Entidades
             Viaje v5 = new Viaje(auxDT.AddDays(168).AddHours(11), Hardcodeo.listaCruceros[4], EDestino.Miami);
             Viaje v6 = new Viaje(auxDT.AddDays(5).AddHours(16), Hardcodeo.listaCruceros[5], EDestino.Venecia);
             Viaje v7 = new Viaje(auxDT.AddDays(27).AddHours(17), Hardcodeo.listaCruceros[6], EDestino.RioDeJaneiro);
+            Viaje v8 = new Viaje(auxDT.AddDays(77).AddHours(6), Hardcodeo.listaCruceros[4], EDestino.Ushuaia);
+            Viaje v9 = new Viaje(auxDT.AddDays(106).AddHours(14), Hardcodeo.listaCruceros[0], EDestino.Santiago);
+            Viaje v10 = new Viaje(auxDT.AddDays(43).AddHours(19), Hardcodeo.listaCruceros[6], EDestino.LaHabana);
+            Viaje v11 = new Viaje(auxDT.AddDays(69).AddHours(20), Hardcodeo.listaCruceros[5], EDestino.Acapulco);
 
             Hardcodeo.listaViajesHistoricos.Add(v1);
             Hardcodeo.listaViajesHistoricos.Add(v2);
@@ -141,7 +145,11 @@ namespace Entidades
             Hardcodeo.listaViajesHistoricos.Add(v4);
             Hardcodeo.listaViajesHistoricos.Add(v5);
             Hardcodeo.listaViajesHistoricos.Add(v6);
-            Hardcodeo.listaViajesHistoricos.Add(v7);
+            Hardcodeo.listaViajesHistoricos.Add(v7); 
+            Hardcodeo.listaViajesHistoricos.Add(v8);
+            Hardcodeo.listaViajesHistoricos.Add(v9);
+            Hardcodeo.listaViajesHistoricos.Add(v10);
+            Hardcodeo.listaViajesHistoricos.Add(v11);
 
             AgregarPasajerosHardcodeadosAViaje(Hardcodeo.listaViajesHistoricos);
         }

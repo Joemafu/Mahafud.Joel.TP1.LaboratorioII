@@ -15,8 +15,9 @@ namespace RelaxoSA
     {
         internal FrmIniciarSesion()
         {
-            InitializeComponent();
+
             Hardcodeo hC = new Hardcodeo();
+            InitializeComponent();
 
         }
 

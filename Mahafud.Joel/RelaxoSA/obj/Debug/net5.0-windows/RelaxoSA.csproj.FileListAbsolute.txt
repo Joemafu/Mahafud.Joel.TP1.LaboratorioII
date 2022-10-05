@@ -29,3 +29,4 @@ G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.Labor
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmViajesBase.resources
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmBase.resources
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmViajesVenta.resources
+G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmEstadisticasAmpliadas.resources
