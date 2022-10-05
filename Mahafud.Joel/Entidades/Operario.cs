@@ -6,17 +6,22 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Operario : Persona
+    public sealed class Operario : Persona
     {
+        #region Atributos
         private string usuario;
         private string contrasenia;
+        #endregion
 
+        #region Constructor
         public Operario(string nombre, string apellido, string dni, string usuario, string contrasenia) : base(nombre, apellido, dni)
         {
             this.usuario = usuario;
             this.contrasenia = contrasenia;
         }
+        #endregion
 
+        #region Propiedades
         new public string Nombre
         {
             get
@@ -43,7 +48,32 @@ namespace Entidades
             }
             //set { }
         }
+        #endregion
 
+        #region Sobreescritura de métodos heredados de Object
+        public override bool Equals(object obj)
+        {
+            bool ret = false;
+
+            if (obj is Operario)
+            {
+                ret = this == (Operario)obj;
+            }
+            return ret;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Nombre} {this.Apellido} {this.Dni} {this.usuario}";
+        }
+        #endregion
+
+        #region Sobrecarga de operadores
         public static bool operator ==(Operario op1, Operario op2)
         {
             bool ret = false;
@@ -61,23 +91,7 @@ namespace Entidades
 
             return !(op1==op2);
         }
-
-        public override bool Equals(object obj)
-        {
-            bool ret = false;
-
-            if (obj is Operario)
-            {
-                ret = this == (Operario)obj;
-            }
-            return ret;
-        }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
+        #endregion
 
     }
 

@@ -6,29 +6,31 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Pasajero : Persona
+    public sealed class Pasajero : Persona
     {
+        #region Atributos de instancia
         private Pasaporte pasaporte;
         private DateTime fechaDeNacimiento;
         private int edad;
-
         private Dictionary<string, int> equipaje;
-
-        /*private bool equipajeDeMano;
-        private int equipajeDespachado;*/
-
         private bool esPremium;
-
         private string numeroDeCamarote;
-        private static int numAsignacíonCamarotePremium; //Solo para el Hardcodeo
-        private static int numAsignacíonCamaroteTurista; //Solo para el Hardcodeo
+        #endregion
 
+        #region Atributos estáticos
+        private static int numAsignacíonCamarotePremium; 
+        private static int numAsignacíonCamaroteTurista;
+        #endregion
+
+        #region Constructor estático
         static Pasajero()
         {
-            Pasajero.numAsignacíonCamarotePremium = 1; //Solo para el Hardcodeo
-            Pasajero.numAsignacíonCamaroteTurista = 1; //Solo para el Hardcodeo
+            Pasajero.numAsignacíonCamarotePremium = 1; 
+            Pasajero.numAsignacíonCamaroteTurista = 1; 
         }
+        #endregion
 
+        #region Constructores de instancia
         public Pasajero(string nombre, string apellido, string dni, DateTime fechaDeNacimiento, Pasaporte pasaporte, bool esPremium, int equipajeDeMano, int equipajeDespachado) : base(nombre, apellido, dni)
         {
             this.pasaporte = pasaporte;
@@ -70,7 +72,7 @@ namespace Entidades
         }
 
             //Constructor sólo para Hardcodeo, Randomiza equipajes
-            internal Pasajero(bool esHardcodeado,  string nombre, string apellido, string dni, DateTime fechaDeNacimiento, Pasaporte pasaporte, bool esPremium) : this(nombre, apellido, dni,fechaDeNacimiento,pasaporte,esPremium,0,0)
+        internal Pasajero(bool esHardcodeado,  string nombre, string apellido, string dni, DateTime fechaDeNacimiento, Pasaporte pasaporte, bool esPremium) : this(nombre, apellido, dni,fechaDeNacimiento,pasaporte,esPremium,0,0)
         {
             Random random = new Random();
             this.edad = Pasajero.CalcularEdad(fechaDeNacimiento);
@@ -92,7 +94,9 @@ namespace Entidades
             this.equipaje["despachado"] = random.Next(0, maxDespachados);
             this.numeroDeCamarote = auxNumCamarote;
         }
+        #endregion
 
+        #region Propiedades
         public string NumeroDeCamarote
         {
             get
@@ -161,15 +165,6 @@ namespace Entidades
             //set { }
         }
 
-        /*public int NumeroDeCamarote
-        {
-            get
-            {
-                return this.numeroDeCamarote;
-            }
-            //set { }
-        }*/
-
         public Pasaporte Pasaporte
         {
             get
@@ -205,7 +200,9 @@ namespace Entidades
             }
             //set { }
         }
+        #endregion
 
+        #region Métodos estáticos
         private static int CalcularEdad(DateTime fechaDeNacimiento)
         {
             int i = 0;
@@ -218,6 +215,54 @@ namespace Entidades
 
             return i;
         }
+        #endregion
 
+        #region Sobreescritura de métodos heredados de object
+        public override bool Equals(object obj)
+        {
+            bool ret = false;
+
+            if (this is null && obj is null)
+            {
+                ret = true;
+            }
+            else if (obj is not null && obj is Pasajero)
+            {
+                ret = this == (Pasajero)obj;
+            }
+
+            return ret;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return $"{this.Nombre} {this.Apellido} - {this.Dni}";
+        }
+
+        #endregion
+
+        #region Sobrecarga de operadores
+        public static bool operator ==(Pasajero p1, Pasajero p2)
+        {
+            bool ret = false;
+
+            if (p1.Dni == p2.Dni)
+            {
+                ret = true;
+            }
+
+            return ret;
+        }
+
+        public static bool operator !=(Pasajero c1, Pasajero c2)
+        {
+            return !(c1 == c2);
+        }
+        #endregion
     }
 }

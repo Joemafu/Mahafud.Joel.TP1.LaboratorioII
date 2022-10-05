@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Entidades.Crucero">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAQAJAAEAAAAACEgAAAlAAAAAAAAIAAAAgAABAAAiA=</HashCode>
+      <FileName>Crucero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Hardcodeo">
+    <Position X="13.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgBAAAAAIAAiEAIAAACAAAACACAAAgBAEAAASA=</HashCode>
+      <FileName>Hardcodeo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Operario">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAQAAAAAAAEgAAAgAAAAAAAAIQAAAAAAAAAAiA=</HashCode>
+      <FileName>Operario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Pasajero">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAIACQAABAEgAAwgAAACAIAAoACAAMAAADBQiA=</HashCode>
+      <FileName>Pasajero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Pasaporte">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAIEgAIAACACAEAgAIAAAAAAAAAAAmA=</HashCode>
+      <FileName>Pasaporte.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Persona">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAABAAQAAACEgAAAgAAAAAAAAIAAAAAAAAAAAiA=</HashCode>
+      <FileName>Persona.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Validacion">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAABAAAAAAAAAAAABAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Validacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Entidades.Viaje">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgwyGAIEcBgAAcAEwMBAAAAQAgAAAIDIAAAAwlQBAiI=</HashCode>
+      <FileName>Viaje.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="EDestino">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAEVAAAAAAAAgAAQAACEAAAAAQIBIIQEAAABBAAAAA=</HashCode>
+      <FileName>EDestino.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EDisponibilidad">
+    <Position X="7.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>EDisponibilidad.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

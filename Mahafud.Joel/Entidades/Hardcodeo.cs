@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Hardcodeo
+    public abstract class Hardcodeo
     {
+        #region Atributos estáticos
         private static List<Operario> listaOperarios;
         private static List<Crucero> listaCruceros;
         private static List<Viaje> listaViajesActuales;
         private static List<Viaje> listaViajesHistoricos;
         private static List<Pasajero> listaPasajeros;
+        #endregion
 
+        #region Constructor estático
         static Hardcodeo()
         {
             Hardcodeo.listaOperarios = new List<Operario>();
@@ -28,7 +31,9 @@ namespace Entidades
             Hardcodeo.InicializarViajesHistoricosHardcodeados();
             Hardcodeo.InicializarViajesHardcodeados();
         }
+        #endregion
 
+        #region Propiedades estáticas
         public static List<Operario> ListaOperarios 
         { 
             get { return Hardcodeo.listaOperarios; } 
@@ -50,8 +55,9 @@ namespace Entidades
         public static List<Viaje> ListaViajesHistoricos
         {
             get { return Hardcodeo.listaViajesHistoricos; }
-            //set { Hardcodeo.ListaViajesHistoricos = value; }
+            //set { }
         }
+        #endregion
 
         #region Hardcodeo de Operarios
         private static void InicializarOperariosHardcodeados()
@@ -71,13 +77,13 @@ namespace Entidades
         #region Hardcodeo de Cruceros
         private static void InicializarCrucerosHardcodeados()
         {
-            Crucero c1 = new Crucero(50, "AA1000", "La Cumbancha Volante", 0, 1, 2, 1250);
-            Crucero c2 = new Crucero(100, "BB2000", "Titanic II", 4, 0, 6, 2500);
-            Crucero c3 = new Crucero(1000, "CC3000", "The Luxury Placeholder", 12, 6, 10, 10000);
-            Crucero c4 = new Crucero(120, "DD4000", "The Wanderer", 0, 3, 3, 2700);
-            Crucero c5 = new Crucero(300, "EE5000", "Tom Cruiser", 2, 0, 4, 3200);
-            Crucero c6 = new Crucero(200, "FF6000", "Poseidón", 1, 1, 3, 4000);
-            Crucero c7 = new Crucero(10, "GG7000", "El Odiseo", 0, 0, 1, 300);
+            Crucero c1 = new Crucero(50, "AA111000", "La Cumbancha Volante", 0, 1, 2, 1250);
+            Crucero c2 = new Crucero(100, "BB222000", "Titanic II", 4, 0, 6, 2500);
+            Crucero c3 = new Crucero(1000, "CC333000", "The Luxury Placeholder", 12, 6, 10, 10000);
+            Crucero c4 = new Crucero(120, "DD444000", "The Wanderer", 0, 3, 3, 2700);
+            Crucero c5 = new Crucero(300, "EE555000", "Tom Cruiser", 2, 0, 4, 3200);
+            Crucero c6 = new Crucero(200, "FF666000", "Poseidón", 1, 1, 3, 4000);
+            Crucero c7 = new Crucero(10, "GG777000", "El Odiseo", 0, 0, 1, 300);
 
             Hardcodeo.listaCruceros.Add(c1);
             Hardcodeo.listaCruceros.Add(c2);
@@ -262,6 +268,7 @@ namespace Entidades
         }
         #endregion
 
+        #region Métodos estáticos
         private static void AgregarPasajerosHardcodeadosAViaje(List<Viaje> viajes)
         {
             int i;
@@ -273,5 +280,6 @@ namespace Entidades
                 }
             }
         }
+        #endregion
     }
 }

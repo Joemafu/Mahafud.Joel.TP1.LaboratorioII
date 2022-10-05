@@ -51,7 +51,17 @@ namespace RelaxoSA
             frmPasajeros.ShowDialog();
         }
 
-        
+        private void chkAyuda_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkAyuda.Checked)
+            {
+                this.SetearMensajeAyuda();
+            }
+            else
+            {
+                this.SetearMensajeAyudaADefault();
+            }
+        }
 
         private void MostrarInfoViajeSeleccionado()
         {
@@ -171,18 +181,6 @@ namespace RelaxoSA
         {
             this.chkAyuda.Text = "Seleccione un viaje de la lista. " +
                 "\nLuego puede vender pasajes de la clase deseada o consultar pasajeros";
-        }
-
-        private void chkAyuda_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.chkAyuda.Checked)
-            {
-                this.SetearMensajeAyuda();
-            }
-            else
-            {
-                this.SetearMensajeAyudaADefault();
-            }
         }
     }
 }

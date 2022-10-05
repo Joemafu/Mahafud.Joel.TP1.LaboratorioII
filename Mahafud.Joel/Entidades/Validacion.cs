@@ -8,6 +8,7 @@ namespace Entidades
 {
     public abstract class Validacion
     {
+        #region Métodos estáticos
         public static bool ValidarTexto(string textoIngresado)
         {
             bool ret = false;
@@ -18,8 +19,6 @@ namespace Entidades
             }
             return ret;
         }
-
-
 
         public static bool ValidarAlfabetico(string textoIngresado)
         {
@@ -76,7 +75,6 @@ namespace Entidades
             }
             return ret;
         }
-
-
+        #endregion
     }
 }

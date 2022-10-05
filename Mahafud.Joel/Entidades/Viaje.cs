@@ -7,31 +7,33 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Viaje
+    public sealed class Viaje
     {
+        #region Atributos de instancia
         private DateTime fechaPartida;
         private DateTime fechaRegreso;
         private Crucero crucero;
         private List<Pasajero> pasajeros;
-
-        private List<Camarote> camarotesPremium;
-        private List<Camarote> camarotesTurista;
-        private int cantidadCamarotesPremium;
-        private int cantidadCamarotesTurista;
-
         private EDestino destino;
         private bool esRegional;
         private double tarifaPremium;
         private double tarifaTurista;
         private int duracionEnHs;
         private int id;
-        private static int ultimoIdUsado;
+        #endregion
 
+        #region Atributo estático
+        private static int ultimoIdUsado;
+        #endregion
+
+        #region Constructor estático
         static Viaje()
         {
             Viaje.ultimoIdUsado = 0;
         }
+        #endregion
 
+        #region Constructor de instancia
         public Viaje(DateTime fechaPartida, Crucero crucero, EDestino destino)
         {
             Viaje.ultimoIdUsado++;
@@ -39,9 +41,6 @@ namespace Entidades
             Random random = new Random();
 
             this.pasajeros = new List<Pasajero>();
-
-            this.camarotesPremium = new List<Camarote>();
-            this.camarotesTurista = new List<Camarote>();
 
             this.fechaPartida = fechaPartida;
             this.crucero = crucero;
@@ -64,7 +63,9 @@ namespace Entidades
 
             this.fechaRegreso = this.fechaPartida.AddHours(this.duracionEnHs);
         }
+        #endregion
 
+        #region Propiedades
         public int Id
         {
             get { return this.id; }
@@ -91,7 +92,6 @@ namespace Entidades
         public string Destino { get { return this.FormatearDestino(); }
             //set { }
         }
-
         public EDestino EDestino
         {
             get { return this.destino; }
@@ -139,55 +139,67 @@ namespace Entidades
         public int DisponibilidadBodegaKgs { get { return this.crucero.CapacidadBodegaKgs - this.CalcularCargaEnBodega(); }
             //set { }
         }
+        #endregion
 
-        public static Viaje operator +(Viaje viaje, Pasajero pasajero)
+        #region Metodos de instancia
+
+        private string FormatearDestino()
         {
-            bool esPremium = pasajero.EsPremium;
-            int kgsDespacho = pasajero.GetDespachadoEnKgs;
-
-            if ((esPremium && viaje.CamarotesPremiumDisponibles > 0 || !esPremium && viaje.CamarotesTuristaDisponibles > 0) && kgsDespacho < viaje.DisponibilidadBodegaKgs && viaje != pasajero)
-            {
-                viaje.pasajeros.Add(pasajero);
-            }
-            return viaje;
+            return Viaje.FormatearDestino(this.destino);
         }
 
-        public static bool operator ==(Viaje viaje, Pasajero pasajero)
+        private int ActualizarDisponibilidadPasajeros(bool esPremium, int capacidadMaxima)
         {
-            bool ret = false;
+            int capacidadActual = capacidadMaxima;
 
-            foreach (Pasajero p in viaje.Pasajeros)
+            foreach (Pasajero item in this.pasajeros)
             {
-                if (pasajero.Dni == p.Dni)
+                if (item.EsPremium == esPremium)
                 {
-                    ret = true;
-                    break;
+                    capacidadActual--;
+                }
+            }
+
+            return capacidadActual;
+        }
+
+        private EDisponibilidad CalcularDisponibilidad(int capacidadActual, int capacidadMaxima)
+        {
+            EDisponibilidad ret = EDisponibilidad.Alta;
+
+            if (capacidadActual < capacidadMaxima * 0.65)
+            {
+                ret = EDisponibilidad.Media;
+
+                if (capacidadActual < capacidadMaxima * 0.30)
+                {
+                    ret = EDisponibilidad.Baja;
+
+                    if (capacidadActual == 0)
+                    {
+                        ret = EDisponibilidad.Agotado;
+                    }
                 }
             }
 
             return ret;
         }
 
-        public static bool operator !=(Viaje viaje, Pasajero pasajero)
+        private int CalcularCargaEnBodega()
         {
-            return !(viaje == pasajero);
-        }
+            int ret = -100;
 
-        public override bool Equals(object obj)
-        {
-            bool ret = false;
-            if (obj is not null && obj is Viaje)
+            foreach (Pasajero item in this.pasajeros)
             {
-                ret = this == obj;
+                ret += item.GetDespachadoEnKgs;
             }
+
             return ret;
         }
 
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
+        #endregion
 
+        #region Metodos estáticos
         public static string FormatearDestino(EDestino destino)
         {
             string ret;
@@ -233,61 +245,7 @@ namespace Entidades
             return ret;
         }
 
-        private string FormatearDestino()
-        {
-            return Viaje.FormatearDestino(this.destino);
-        }
-
-        private int ActualizarDisponibilidadPasajeros(bool esPremium, int capacidadMaxima)
-        {
-            int capacidadActual = capacidadMaxima;
-
-            foreach (Pasajero item in this.pasajeros)
-            {
-                if (item.EsPremium == esPremium)
-                {
-                    capacidadActual--;
-                }
-            }           
-
-            return capacidadActual;
-        }
-
-        private EDisponibilidad CalcularDisponibilidad(int capacidadActual, int capacidadMaxima)
-        {
-            EDisponibilidad ret = EDisponibilidad.Alta;
-
-            if (capacidadActual < capacidadMaxima * 0.65)
-            {
-                ret = EDisponibilidad.Media;
-
-                if (capacidadActual < capacidadMaxima * 0.30)
-                {
-                    ret = EDisponibilidad.Baja;
-
-                    if (capacidadActual == 0)
-                    {
-                        ret = EDisponibilidad.Agotado;
-                    }
-                }                
-            }
-
-            return ret;
-        }
-
-        private int CalcularCargaEnBodega()
-        {
-            int ret = -100;
-
-            foreach (Pasajero item in this.pasajeros)
-            {
-                ret += item.GetDespachadoEnKgs;
-            }
-            
-            return ret;
-        }
-
-        public static Viaje BuscarViajePorId(List<Viaje>listaViajes, int idViaje)
+        public static Viaje BuscarViajePorId(List<Viaje> listaViajes, int idViaje)
         {
             Viaje auxViaje = null;
 
@@ -317,19 +275,19 @@ namespace Entidades
                 turistaVendidos = v.Crucero.CantidadCamarotesTurista - v.CamarotesTuristaDisponibles;
                 recaudado = premiumVendidos * v.TarifaPremium + turistaVendidos * v.TarifaTurista;
 
-                if(!destinoYRecaudacion.ContainsKey((int)v.EDestino))
+                if (!destinoYRecaudacion.ContainsKey((int)v.EDestino))
                 {
                     destinoYRecaudacion.Add((int)v.EDestino, recaudado);
                 }
                 else
                 {
                     destinoYRecaudacion[(int)v.EDestino] += recaudado;
-                }                
+                }
             }
 
             listaDestinoYFacturacion = destinoYRecaudacion.ToList();
 
-            return  listaDestinoYFacturacion;
+            return listaDestinoYFacturacion;
         }
 
         public static List<KeyValuePair<string, int>> CalcularPasajerosMasFrecuentes()
@@ -401,6 +359,91 @@ namespace Entidades
             listaDestinoYPasajesVendidos = destinoYPasajesVendidos.ToList();
 
             return listaDestinoYPasajesVendidos;
-        }        
+        }
+        #endregion
+
+        #region Sobreescritura métodos heredados de Object
+
+        public override bool Equals(object obj)
+        {
+            bool ret = false;
+
+            if (this is null && obj is null)
+            {
+                ret = true;
+            }
+            else if (obj is not null && obj is Viaje)
+            {
+                ret = this == (Viaje)obj;
+            }
+
+            return ret;
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return $"ID {this.Id} - Destino {FormatearDestino(this.EDestino)} - Duración {this.DuracionEnHs} - Fecha partida {this.FechaPartida.ToShortDateString()} - Fecha regreso {this.FechaRegreso.ToShortDateString()}";
+        }
+
+        #endregion
+
+        #region Sobrecarga de operadores
+
+        public static Viaje operator +(Viaje viaje, Pasajero pasajero)
+        {
+            bool esPremium = pasajero.EsPremium;
+            int kgsDespacho = pasajero.GetDespachadoEnKgs;
+
+            if ((esPremium && viaje.CamarotesPremiumDisponibles > 0 || !esPremium && viaje.CamarotesTuristaDisponibles > 0) && kgsDespacho < viaje.DisponibilidadBodegaKgs && viaje != pasajero)
+            {
+                viaje.pasajeros.Add(pasajero);
+            }
+            return viaje;
+        }
+
+        public static bool operator ==(Viaje viaje, Pasajero pasajero)
+        {
+            bool ret = false;
+
+            foreach (Pasajero p in viaje.Pasajeros)
+            {
+                if (pasajero.Dni == p.Dni)
+                {
+                    ret = true;
+                    break;
+                }
+            }
+
+            return ret;
+        }
+
+        public static bool operator !=(Viaje viaje, Pasajero pasajero)
+        {
+            return !(viaje == pasajero);
+        }
+
+        public static bool operator ==(Viaje p1, Viaje p2)
+        {
+            bool ret = false;
+
+            if (p1.Id == p2.Id)
+            {
+                ret = true;
+            }
+
+            return ret;
+        }
+
+        public static bool operator !=(Viaje c1, Viaje c2)
+        {
+            return !(c1 == c2);
+        }
+
+        #endregion
     }
 }

@@ -15,10 +15,7 @@ namespace RelaxoSA
     {
         internal FrmIniciarSesion()
         {
-
-            Hardcodeo hC = new Hardcodeo();
             InitializeComponent();
-
         }
 
         private void LimpiarCampos(bool soloPass)

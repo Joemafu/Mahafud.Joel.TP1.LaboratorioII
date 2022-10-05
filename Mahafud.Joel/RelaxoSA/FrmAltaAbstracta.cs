@@ -21,15 +21,5 @@ namespace RelaxoSA
         {
             this.chkAyuda.Text = "";
         }
-
-        private void FrmAltaModificacionAbs_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmAltaModificacionAbs_Load_1(object sender, EventArgs e)
-        {
-
-        }
     }    
 }

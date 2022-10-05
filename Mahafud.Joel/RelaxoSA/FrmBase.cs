@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace RelaxoSA
 {
-    public /*abstract*/ partial class FrmBase : Form
+    public /*abstract*/ partial class FrmBase : Form //Intenté definirla abstracta pero luego los forms que heredan no dibujan el design.
     {
         public FrmBase()
         {
@@ -25,14 +25,6 @@ namespace RelaxoSA
         public void SetearMensajeAyudaADefault()
         {
             this.chkAyuda.Text = "Ayuda!";
-        }
-
-        private void chkAyuda_CheckStateChanged(object sender, EventArgs e)
-        {
-            if (this.chkAyuda.Checked)
-            {
-                this.SetearMensajeAyuda();
-            }
         }
     }
 }

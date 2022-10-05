@@ -41,7 +41,6 @@ namespace RelaxoSA
             this.chkAyuda.TabIndex = 1;
             this.chkAyuda.Text = "Ayuda!";
             this.chkAyuda.UseVisualStyleBackColor = true;
-            this.chkAyuda.CheckStateChanged += new System.EventHandler(this.chkAyuda_CheckStateChanged);
             // 
             // FrmBase
             // 

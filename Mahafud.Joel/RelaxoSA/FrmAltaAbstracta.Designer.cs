@@ -75,7 +75,6 @@ namespace RelaxoSA
             this.Name = "FrmAltaAbstracta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAltaModificacionAbs";
-            this.Load += new System.EventHandler(this.FrmAltaModificacionAbs_Load_1);
             this.Controls.SetChildIndex(this.btnAceptar, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.chkAyuda, 0);
@@ -83,7 +82,6 @@ namespace RelaxoSA
             this.PerformLayout();
 
         }
-
         #endregion
 
         protected System.Windows.Forms.Button btnAceptar;

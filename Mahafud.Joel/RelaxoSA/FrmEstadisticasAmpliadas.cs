@@ -126,6 +126,8 @@ namespace RelaxoSA
                 }
             }
 
+            this.dgvServicioMasSolicitado.Rows.Add("Total", (ventasPasajeRegional+ventasPasajeExtraRegional).ToString("N2"));
+
             if (ventasPasajeRegional > ventasPasajeExtraRegional)
             {
                 this.dgvServicioMasSolicitado.Rows.Add("Regional", ventasPasajeRegional.ToString("N2"));

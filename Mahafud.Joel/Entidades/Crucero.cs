@@ -6,38 +6,25 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Crucero
+    public sealed class Crucero
     {
+        #region Atributos
         private string nombre;
         private string matricula;
-        //private int cantidadCamarotes;
         private Dictionary<string, int> salones;
         private int capacidadBodegaKgs;
-        private List<Camarote> camarotesTurista;
-        private List<Camarote> camarotesPremium;
+        int cantidadCamarotesPremium;
+        int cantidadCamarotesTurista;
+        #endregion
 
+        #region Constructores
         private Crucero(int cantidadCamarotes)
         {
-            int i;
-            int cantCamarotesPremium = (int)Math.Round(cantidadCamarotes * 0.35);
-            int cantCamarotesTurista = (int)Math.Round(cantidadCamarotes * 0.65); 
-
-            this.camarotesPremium = new List<Camarote>();
-            this.camarotesTurista = new List<Camarote>();
-
-            for (i=0; i < cantCamarotesPremium;i++)
-            {
-                this.camarotesPremium.Add(new Camarote(true,i+1));
-            }
-
-            for (i = 0; i < cantCamarotesTurista; i++)
-            {
-                this.camarotesTurista.Add(new Camarote(false, i+1));
-            }
+            this.cantidadCamarotesPremium = (int)Math.Round(cantidadCamarotes * 0.35);
+            this.cantidadCamarotesTurista = (int)Math.Round(cantidadCamarotes * 0.65); 
         }
         internal Crucero (int cantidadCamarotes, string matricula,string nombre, int piletas,int casinos, int restaurantes, int capacidadBodegaKgs) : this(cantidadCamarotes)
         {
-            //this.cantidadCamarotes = cantidadCamarotes;
             this.matricula = matricula;
             this.nombre = nombre;
 
@@ -48,9 +35,10 @@ namespace Entidades
             this.salones["restaurantes"] = restaurantes;
 
             this.capacidadBodegaKgs = capacidadBodegaKgs;
-
         }
+        #endregion
 
+        #region Propiedades
         public string Nombre
         {
             get
@@ -73,7 +61,7 @@ namespace Entidades
         {
             get
             {
-                return this.camarotesPremium.Count;
+                return this.cantidadCamarotesPremium;
             }
             //set { }
         }
@@ -82,7 +70,7 @@ namespace Entidades
         {
             get
             {
-                return this.camarotesTurista.Count;
+                return this.cantidadCamarotesTurista;
             }
             //set { }
         }
@@ -104,45 +92,9 @@ namespace Entidades
             }
             //set { }
         }
+        #endregion
 
-        internal List<Camarote> CamarotesPremium
-        {
-            get
-            {
-                return this.camarotesPremium;
-            }
-            //set { }
-        }
-
-        internal List<Camarote> CamarotesTurista
-        {
-            get
-            {
-                return this.camarotesTurista;
-            }
-            //set { }
-        }
-
-        /*internal override string ToString()
-        {
-            StringBuilder sb = new StringBuilder();
-
-            sb.Append(this.Nombre);
-            sb.Append(" - "); 
-            sb.Append(this.Matricula);
-            sb.Append(" - "); 
-            sb.Append(this.CapacidadBodegaKgs);
-            sb.Append(" - "); 
-            sb.Append(this.Salones);
-
-            return "";
-        }*/
-
-        /*internal static implicit operator string(Crucero crucero)
-        {
-            return crucero.ToString();
-        }*/
-
+        #region Métodos
         public bool EstaLibre(DateTime fecha)
         {
             bool ret = true;
@@ -157,9 +109,55 @@ namespace Entidades
                     }
                 }
             }
+            return ret;
+        }
+        #endregion
+
+        #region Sobreescritura de métodos heredados de Object
+        public override bool Equals(object obj)
+        {
+            bool ret = false;
+
+            if (this is null && obj is null)
+            {
+                ret = true;
+            }
+            else if (obj is not null && obj is Crucero)
+            {
+                ret = this == (Crucero)obj;
+            }
 
             return ret;
         }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return $"Nombre {this.Nombre} - Matrícula {this.Matricula}";
+        }
+        #endregion
+
+        #region Sobrecarga de operadores
+        public static bool operator ==(Crucero c1, Crucero c2)
+        {
+            bool ret = false;
+
+            if(c1.Matricula==c2.Matricula)
+            {
+                ret = true;
+            }
+
+            return ret;
+        }
+
+        public static bool operator !=(Crucero c1, Crucero c2)
+        {
+            return !(c1==c2);
+        }
+        #endregion
     }
 }

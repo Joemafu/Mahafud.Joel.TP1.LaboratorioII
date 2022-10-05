@@ -154,13 +154,13 @@ namespace RelaxoSA
         }
 
         #endregion
-        protected internal System.Windows.Forms.Button btnViajes;
-        protected internal System.Windows.Forms.Button btnPasajeros;
-        protected internal System.Windows.Forms.Button btnCruceros;
-        protected internal System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button btnViajes;
+        private System.Windows.Forms.Button btnPasajeros;
+        private System.Windows.Forms.Button btnCruceros;
+        private System.Windows.Forms.Button btnCerrarSesion;
         internal System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.Label lblBienvenido;
-        protected internal System.Windows.Forms.Button btnAgregarViaje;
+        private System.Windows.Forms.Button btnAgregarViaje;
     }
 }
 
