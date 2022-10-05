@@ -62,7 +62,7 @@ namespace Entidades
         #region Hardcodeo de Operarios
         private static void InicializarOperariosHardcodeados()
         {
-            Operario op1 = new Operario("Joel", "Mahafud", "37777777", "joe", "1");
+            Operario op1 = new Operario("Joel", "Mahafud", "37777777", "jmahafud", "Herencia");
             Operario op2 = new Operario("Maximiliano", "Neiner", "30000000", "mneiner", "Abstraccion");
             Operario op3 = new Operario("Facundo", "Rocha", "38888888", "frocha", "Polimorfismo");
             Operario op4 = new Operario("Felipe", "Bustos", "40000000", "fbustos", "Encapsulamiento");

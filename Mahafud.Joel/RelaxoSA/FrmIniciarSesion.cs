@@ -83,7 +83,7 @@ namespace RelaxoSA
         public override void SetearMensajeAyuda()
         {
             this.chkAyuda.Text = "" +
-                "Inicie Sesión.";
+                "user jmahafud - pass Herencia";
         }
     }
 }
