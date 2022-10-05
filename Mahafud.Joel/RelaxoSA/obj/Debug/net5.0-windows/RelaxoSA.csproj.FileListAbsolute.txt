@@ -32,3 +32,37 @@ G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.Labor
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmAltaViaje.resources
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmViajesAgregar.resources
 G:\Mi unidad\Workspace\2º Cuatrimestre C#\Laboratorio-II\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmAltaAbstracta.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\bin\Debug\net5.0-windows\RelaxoSA.exe
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\bin\Debug\net5.0-windows\RelaxoSA.deps.json
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\bin\Debug\net5.0-windows\RelaxoSA.runtimeconfig.json
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\bin\Debug\net5.0-windows\RelaxoSA.runtimeconfig.dev.json
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\bin\Debug\net5.0-windows\RelaxoSA.dll
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\bin\Debug\net5.0-windows\ref\RelaxoSA.dll
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\bin\Debug\net5.0-windows\RelaxoSA.pdb
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\bin\Debug\net5.0-windows\Entidades.dll
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\bin\Debug\net5.0-windows\Entidades.pdb
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.csproj.AssemblyReference.cache
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmAltaAbstracta.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmAltaPasajero.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmAltaViaje.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmBase.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmCruceros.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmEstadisticas.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmEstadisticasAmpliadas.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmHome.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmIniciarSesion.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmPasajerosBase.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmPasajerosCompleto.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmViajesAgregar.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmViajesBase.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.FrmViajesVenta.resources
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.csproj.GenerateResource.cache
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.AssemblyInfoInputs.cache
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.AssemblyInfo.cs
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.csproj.CoreCompileInputs.cache
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.csproj.CopyComplete
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.dll
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\ref\RelaxoSA.dll
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.pdb
+C:\Users\Joel\Desktop\Mahafud.Joel.TP1.LaboratorioII\Mahafud.Joel\RelaxoSA\obj\Debug\net5.0-windows\RelaxoSA.genruntimeconfig.cache

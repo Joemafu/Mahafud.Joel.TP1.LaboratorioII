@@ -17,7 +17,6 @@ namespace RelaxoSA
         private double iva;
         private double tasas;
         private double neto;
-        List<Pasajero> pasajeros;
 
         private FrmAltaPasajero()
         {
@@ -29,7 +28,6 @@ namespace RelaxoSA
             this.lblDestino.Text = $"Destino a {viaje.Destino}";
             this.cmbxNacionalidad.Text = "Argentina";
             this.lblId.Text = viaje.Id.ToString();
-            this.cmbCantidadDePasajeros.Text = "1 pasajero";
 
             if (esPremium)
             {
@@ -56,20 +54,15 @@ namespace RelaxoSA
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            pasajeros = new List<Pasajero>();
-
-            //int cantidadDePasajeros = this.cmbCantidadDePasajeros.SelectedIndex + 1;
 
             if(VenderPasaje())
             {
-                //cantidadDePasajeros--;
                 this.txtNombre.Text = "";
                 this.txtApellido.Text = "";
                 this.txtDni.Text = "";
                 this.txtNumeroPasaporte.Text = "";
+                DialogResult = DialogResult.OK;
             }
-            
-            DialogResult = DialogResult.OK;
         }
 
         private bool ValidarSeleccionEquipaje ()
@@ -79,7 +72,7 @@ namespace RelaxoSA
 
         public override void SetearMensajeAyuda()
         {
-            this.chkAyuda.Text = "Vender camarote (1 a 4 pasajes).";
+            this.chkAyuda.Text = "Vender pasaje.";
         }
 
         private void chkAyuda_CheckedChanged(object sender, EventArgs e)
@@ -92,14 +85,6 @@ namespace RelaxoSA
             {
                 this.SetearMensajeAyudaADefault();
             }
-        }
-
-        private void cmbCantidadDePasajeros_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.lblPrecioBase.Text = "$" + (this.precioBase * (this.cmbCantidadDePasajeros.SelectedIndex + 1)).ToString("N2");
-            this.lblIvaPrecio.Text = "$" + (this.iva * (this.cmbCantidadDePasajeros.SelectedIndex + 1)).ToString("N2");
-            this.lblTasasAdicionalesPrecio.Text = "$" + (this.tasas * (this.cmbCantidadDePasajeros.SelectedIndex + 1)).ToString("N2");
-            this.lblTotalPrecio.Text = "$" + (this.neto * (this.cmbCantidadDePasajeros.SelectedIndex + 1)).ToString("N2");
         }
 
         private bool VenderPasaje()
@@ -132,7 +117,6 @@ namespace RelaxoSA
             {
                 Pasaporte pasaporte = new Pasaporte(this.txtNumeroPasaporte.Text, this.cmbxNacionalidad.Text, this.datepExpedicionPasaporte.Value, this.datepVencimientoPasaporte.Value);
                 Pasajero pasajero = new Pasajero(this.txtNombre.Text, this.txtApellido.Text, this.txtDni.Text, this.datepFechaNacimiento.Value, pasaporte, this.lblClase.Text == "Clase Premium - viaje ID", equipajeDeMano, equipajesAdicionales);
-                this.pasajeros.Add(pasajero);
 
                 idDeViajeEnVenta = Int32.Parse(this.lblId.Text);
 

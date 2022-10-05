@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Mi unidad\\Workspace\\2º Cuatrimestre C#\\Laboratorio-II\\Mahafud.Joel.TP1.LaboratorioII\\Mahafud.Joel\\RelaxoSA\\RelaxoSA.csproj",
+      "projectUniqueName": "C:\\Users\\Joel\\Desktop\\Mahafud.Joel.TP1.LaboratorioII\\Mahafud.Joel\\RelaxoSA\\RelaxoSA.csproj",
       "projectName": "RelaxoSA",
-      "projectPath": "G:\\Mi unidad\\Workspace\\2º Cuatrimestre C#\\Laboratorio-II\\Mahafud.Joel.TP1.LaboratorioII\\Mahafud.Joel\\RelaxoSA\\RelaxoSA.csproj",
+      "projectPath": "C:\\Users\\Joel\\Desktop\\Mahafud.Joel.TP1.LaboratorioII\\Mahafud.Joel\\RelaxoSA\\RelaxoSA.csproj",
       "packagesPath": "C:\\Users\\Joel\\.nuget\\packages\\",
-      "outputPath": "G:\\Mi unidad\\Workspace\\2º Cuatrimestre C#\\Laboratorio-II\\Mahafud.Joel.TP1.LaboratorioII\\Mahafud.Joel\\RelaxoSA\\obj\\",
+      "outputPath": "C:\\Users\\Joel\\Desktop\\Mahafud.Joel.TP1.LaboratorioII\\Mahafud.Joel\\RelaxoSA\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Joel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
           "projectReferences": {
-            "G:\\Mi unidad\\Workspace\\2º Cuatrimestre C#\\Laboratorio-II\\Mahafud.Joel.TP1.LaboratorioII\\Mahafud.Joel\\Entidades\\Entidades.csproj": {
-              "projectPath": "G:\\Mi unidad\\Workspace\\2º Cuatrimestre C#\\Laboratorio-II\\Mahafud.Joel.TP1.LaboratorioII\\Mahafud.Joel\\Entidades\\Entidades.csproj"
+            "C:\\Users\\Joel\\Desktop\\Mahafud.Joel.TP1.LaboratorioII\\Mahafud.Joel\\Entidades\\Entidades.csproj": {
+              "projectPath": "C:\\Users\\Joel\\Desktop\\Mahafud.Joel.TP1.LaboratorioII\\Mahafud.Joel\\Entidades\\Entidades.csproj"
             }
           }
         }
